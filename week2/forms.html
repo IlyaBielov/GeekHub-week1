@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms</title>
+</head>
+<body>
+  <h1>Profile edit page</h1>
+  <form action="" method="GET">
+    <fieldset>
+      <legend>Basic info</legend>
+      <ul>
+        <li><label for="id">ID - </label> <input type="text" name="id"  id="id"  placeholder="725" disabled="disabled" ></li>
+        <li><label for="firstName">First Name - </label><input type="text" name="firstName" id="firstName"></li>
+        <li><label for="lastName">Last Name - </label><input type="text" name="firstName" id="lastName"></li>
+        <li><label for="password">Password - </label><input type="password" name="password" id="password"></li>
+        <li><label for="phoneNumber">Phone - </label><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="380"></li>
+        <li>
+          <label for="email">Email - </label><input type="email" name="email" id="email" ><br>
+          <input id="checkbox" type="checkbox"><label for="checkbox">Keep my email address private</label><br>
+          <p>We'll remove your public profile email and use 1978331+username@users.noreplylocalhost</p>
+        </li>
+        <li><label for="date">DOB - </label><input type="date" name="date" id="date"></li>
+        <li><label for="url">Blog url - </label><input type="url" name="url" id="url" placeholder="http://"></li>
+        <li><label for="aboutMe">About Me</label><br><textarea name="aboutMe" id="aboutMe" cols="30" rows="5"></textarea></li>
+        <li><label for="file">Profile picture - </label><input type="file" name="file" id="file"></li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>Personal info</legend>
+      <ul>
+        <li><label for="range">Desire to study </label><input type="range" name="range" id="range"></li>
+        <li><label for="number">Experience - </label><input type="number" name="number" id="number"> years</li>
+        <li>
+          <label>Development experience :</label>
+          <input type="radio" name="DevEx" id="LtP"><label for="LtP">Learning to Program</label>
+          <input type="radio" name="DevEx" id="JD"><label for="JD">Junior Developer</label>
+          <input type="radio" name="DevEx" id="Mid-LD"><label for="Mid-LD">Mid-Level Developer </label>
+          <input type="radio" name="DevEx" id="SD"><label for="SD">Senior Developer</label>
+        </li>
+        <li>
+          <label for="country">Country - </label>
+          <select name="country" id="country">
+            <option>- Choose your country -</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="USA">USA</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Spain">Spain</option>
+          </select>
+        </li>
+        <li>
+            <label>Skills</label> 
+            <input type="checkbox" id="html"    name="skills" value="html" checked><label for="html">HTML</label>
+            <input type="checkbox" id="css"     name="skills" value="css"><label for="css">CSS</label>
+            <input type="checkbox" id="js"      name="skills" value="js"><label for="js">JavaScript</label>
+            <input type="checkbox" id="ruby"    name="skills" value="ruby"><label for="ruby">Ruby</label>
+            <input type="checkbox" id="scala"   name="skills" value="scala"><label for="scala">Scala</label>
+            <input type="checkbox" id="haskell" name="skills" value="haskell"><label for="haskell">Haskell</label>
+        </li>
+      </ul>
+    </fieldset>
+    <button type="reset">Cancel</button>
+    <button type="submit">Submit</button>
+    <input type="hidden" name="city" value="Cherkasy">
+  </form>
+</body>
+</html>
