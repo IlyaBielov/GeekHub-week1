@@ -17,7 +17,7 @@
         <li><label for="phoneNumber">Phone - </label><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="380"></li>
         <li>
           <label for="email">Email - </label><input type="email" name="email" id="email" ><br>
-          <input id="checkbox" type="checkbox"><label for="checkbox">Keep my email address private</label><br>
+          <input id="checkbox" type="checkbox"><label for="checkbox">Keep my email address private</label>
           <p>We'll remove your public profile email and use 1978331+username@users.noreplylocalhost</p>
         </li>
         <li><label for="date">DOB - </label><input type="date" name="date" id="date"></li>
@@ -33,10 +33,12 @@
         <li><label for="number">Experience - </label><input type="number" name="number" id="number"> years</li>
         <li>
           <label>Development experience :</label>
-          <input type="radio" name="DevEx" id="LtP"><label for="LtP">Learning to Program</label>
-          <input type="radio" name="DevEx" id="JD"><label for="JD">Junior Developer</label>
-          <input type="radio" name="DevEx" id="Mid-LD"><label for="Mid-LD">Mid-Level Developer </label>
-          <input type="radio" name="DevEx" id="SD"><label for="SD">Senior Developer</label>
+          <ul>
+            <li><input type="radio" name="DevEx" id="LtP"><label for="LtP">Learning to Program</label></li>
+            <li><input type="radio" name="DevEx" id="JD"><label for="JD">Junior Developer</label></li>
+            <li><input type="radio" name="DevEx" id="Mid-LD"><label for="Mid-LD">Mid-Level Developer </label></li>
+            <li><input type="radio" name="DevEx" id="SD"><label for="SD">Senior Developer</label></li>
+          </ul>
         </li>
         <li>
           <label for="country">Country - </label>
@@ -49,13 +51,15 @@
           </select>
         </li>
         <li>
-            <label>Skills</label> 
-            <input type="checkbox" id="html"    name="skills" value="html" checked><label for="html">HTML</label>
-            <input type="checkbox" id="css"     name="skills" value="css"><label for="css">CSS</label>
-            <input type="checkbox" id="js"      name="skills" value="js"><label for="js">JavaScript</label>
-            <input type="checkbox" id="ruby"    name="skills" value="ruby"><label for="ruby">Ruby</label>
-            <input type="checkbox" id="scala"   name="skills" value="scala"><label for="scala">Scala</label>
-            <input type="checkbox" id="haskell" name="skills" value="haskell"><label for="haskell">Haskell</label>
+          <label>Skills</label>
+          <ul>
+            <li><input type="checkbox" name="skills" id="html" value="html" checked><label for="html">HTML</label></li>
+            <li><input type="checkbox" name="skills" id="css" value="css"><label for="css">CSS</label></li>
+            <li><input type="checkbox" name="skills" id="js" value="js"><label for="js">JavaScript</label></li>
+            <li><input type="checkbox" name="skills" id="ruby" value="ruby"><label for="ruby">Ruby</label></li>
+            <li><input type="checkbox" name="skills" id="scala" value="scala"><label for="scala">Scala</label></li>
+            <li><input type="checkbox" name="skills" id="haskell" value="haskell"><label for="haskell">Haskell</label></li>
+          </ul>
         </li>
       </ul>
     </fieldset>
