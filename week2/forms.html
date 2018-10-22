@@ -6,18 +6,18 @@
 </head>
 <body>
   <h1>Profile edit page</h1>
-  <form action="" method="GET">
+  <form action="https://postman-echo.com/post" method="post">
     <fieldset>
       <legend>Basic info</legend>
       <ul>
-        <li><label for="id">ID - </label> <input type="text" name="id"  id="id"  placeholder="725" disabled="disabled" ></li>
+        <li><label for="id">ID - </label><input type="text" name="id"  id="id"  placeholder="725" disabled="disabled"></li>
         <li><label for="firstName">First Name - </label><input type="text" name="firstName" id="firstName"></li>
-        <li><label for="lastName">Last Name - </label><input type="text" name="firstName" id="lastName"></li>
+        <li><label for="lastName">Last Name - </label><input type="text" name="lastName" id="lastName"></li>
         <li><label for="password">Password - </label><input type="password" name="password" id="password"></li>
         <li><label for="phoneNumber">Phone - </label><input type="tel" name="phoneNumber" id="phoneNumber" placeholder="380"></li>
         <li>
           <label for="email">Email - </label><input type="email" name="email" id="email" ><br>
-          <input id="checkbox" type="checkbox"><label for="checkbox">Keep my email address private</label>
+          <input type="checkbox" name="keep-email-private" id="checkbox" value="true"><label for="checkbox">Keep my email address private</label>
           <p>We'll remove your public profile email and use 1978331+username@users.noreplylocalhost</p>
         </li>
         <li><label for="date">DOB - </label><input type="date" name="date" id="date"></li>
@@ -34,20 +34,21 @@
         <li>
           <label>Development experience :</label>
           <ul>
-            <li><input type="radio" name="DevEx" id="LtP"><label for="LtP">Learning to Program</label></li>
-            <li><input type="radio" name="DevEx" id="JD"><label for="JD">Junior Developer</label></li>
-            <li><input type="radio" name="DevEx" id="Mid-LD"><label for="Mid-LD">Mid-Level Developer </label></li>
-            <li><input type="radio" name="DevEx" id="SD"><label for="SD">Senior Developer</label></li>
+            <li><input type="radio" name="DevEx" id="LtP" value="Learning-to-Program"><label for="LtP">Learning to Program</label></li>
+            <li><input type="radio" name="DevEx" id="JD" value="Junior-Developer"><label for="JD">Junior Developer</label></li>
+            <li><input type="radio" name="DevEx" id="Mid-LD" value="Mid-Level-Developer"><label for="Mid-LD">Mid-Level Developer </label></li>
+            <li><input type="radio" name="DevEx" id="SD" value="Senior-Developer"><label for="SD">Senior Developer</label></li>
           </ul>
         </li>
         <li>
-          <label for="country">Country - </label>
-          <select name="country" id="country">
-            <option>- Choose your country -</option>
-            <option value="Ukraine">Ukraine</option>
-            <option value="USA">USA</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Spain">Spain</option>
+          <label for="country">Country: </label>
+          <select name="country" id="country" required>
+            <option selected="selected" disabled="disabled">- Choose your country -</option>
+            <option value="UA">Ukraine</option>
+            <option disabled="disabled">-------------------------------</option>
+            <option value="US">USA</option>
+            <option value="TH">Thailand</option>
+            <option value="ES">Spain</option>
           </select>
         </li>
         <li>
