@@ -123,6 +123,7 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
   }
 
 .footer{
+  position: relative;
   border-top: 4px solid;
   border-image: linear-gradient(to right, #f1592a 0%, #bf1e2e 100%) ;
   border-image-slice: 1;
@@ -163,3 +164,17 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
 .footer-social a:nth-child(3){background-image: url("../images/socials/google.png");}
 .footer-social a:nth-child(4){background-image: url("../images/socials/facebook.png");}
 .footer-social a:nth-child(5){background-image: url("../images/socials/bird.png");}
+
+.go-to-top{
+  position: absolute;
+  top: -42px;
+  right: 13%;
+}
+.go-to-top>a{
+  display: block;
+  width: 42px;
+  height: 38px;
+  border-top-left-radius: 4px; border-top-right-radius: 4px;
+  background: center no-repeat #cd2e2d;
+  background-image: url("..//images/go-to-top.png");
+}
