@@ -110,7 +110,7 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
   color: #e14a2b; font-size: 1.875rem; font-weight: 100; padding-bottom: 27px;
 }
 .aside-content>.content{
- max-width: 235px;
+ max-width: 235px; border-radius: 5px;
 }
   .content{
     box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.2);
