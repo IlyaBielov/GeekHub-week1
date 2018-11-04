@@ -66,13 +66,24 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
 .main-nav{
   max-width: 222px;
   max-height: 167px;
+  margin-left: 45px;
 }
 .main-menu a{
   color: #363a3b; font-weight: 100; font-size: 1.125rem;
 }
 .main-menu li{
- margin-bottom: 15px;
+ margin-bottom: 20px; 
+ position: relative;
 }
+.icon{
+  margin-right: 10px;  
+  position: absolute;
+}
+.icon[src$="icon1.png"]{top: -6px; left: -45px;}
+.icon[src$="icon2.png"]{top: -4px; left: -42px;}
+.icon[src$="icon3.png"]{top: -5px; left: -42px;}
+.icon[src$="icon5.png"]{top: -6px; left: -43px;}
+
 .main-menu a:hover{
   color: #df4a2b;
 }
