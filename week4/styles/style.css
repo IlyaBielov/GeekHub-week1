@@ -181,6 +181,7 @@ a{color: #fff; text-decoration: none;}
   margin-left: 0;
 }
 .footer-menu a{
+  text-transform: uppercase;
   color: #898989;
 }
   .footer-menu a:hover{
