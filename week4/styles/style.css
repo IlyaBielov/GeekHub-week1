@@ -111,9 +111,10 @@ a{color: #fff; text-decoration: none;}
   padding: 10px;
 }
 .news-link h3{
- color: #484c4d; 
- font-size: 1.125rem; 
- padding-bottom: 10px;
+  display: inline-block;
+  color: #484c4d; 
+  font-size: 1.125rem; 
+  padding-bottom: 10px;
 }
 .news-link h3:hover{
   text-decoration: underline;
