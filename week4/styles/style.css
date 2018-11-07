@@ -161,23 +161,26 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
   .footer-menu a:hover{
     color: #cd2e2d;
   }
-.footer-social a{
+.social-menu li{
   display: inline-block;
+}
+.social-menu a{
+  display: block;
   width: 20px; height: 20px;
   opacity: 0.4;
   border-radius: 4px;
   background: center no-repeat;
   background-color: #484c4d;
 }
-.footer-social a:hover{
+.social-menu a:hover{
   background-color: #cd2e2d;
   opacity: 1;
 }
-.footer-social a:nth-child(1){background-image: url("../images/socials/vk.png");}
-.footer-social a:nth-child(2){background-image: url("../images/socials/videos.png");}
-.footer-social a:nth-child(3){background-image: url("../images/socials/google.png");}
-.footer-social a:nth-child(4){background-image: url("../images/socials/facebook.png");}
-.footer-social a:nth-child(5){background-image: url("../images/socials/bird.png");}
+.social-menu a.vk {background-image: url("../images/socials/vk.png");}
+.social-menu a.youtube {background-image: url("../images/socials/videos.png");}
+.social-menu a.google {background-image: url("../images/socials/google.png");}
+.social-menu a.facebook {background-image: url("../images/socials/facebook.png");}
+.social-menu a.twitter {background-image: url("../images/socials/bird.png");}
 
 .go-to-top{
   position: absolute;
