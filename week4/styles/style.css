@@ -1,7 +1,7 @@
 @import url("reset.css");
 
 html{font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 300;}
-a{color: #fff; text-decoration: none; text-transform: uppercase;}
+a{color: #fff; text-decoration: none;}
 .centre-block-main{margin: 0 auto; max-width: 990px;}
 
 .header{
@@ -31,6 +31,7 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
   display: inline-flex;
 }
 .header-menu a{
+  text-transform: uppercase;
   line-height: 6.7;
   padding: 0px 11px; 
   margin: 0 2.5px;
@@ -109,10 +110,13 @@ a{color: #fff; text-decoration: none; text-transform: uppercase;}
 .main-section-wrap{
   padding: 10px;
 }
-.main-section-wrap h3{
+.news-link h3{
  color: #484c4d; 
  font-size: 1.125rem; 
  padding-bottom: 10px;
+}
+.news-link h3:hover{
+  text-decoration: underline;
 }
 .main-section-wrap p{
   font-size: 0.875rem; 
