@@ -1,0 +1,20 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: url('../img/bg.svg');
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-size: cover
+
+}
+
+.container {
+  @include min-max(320px, 100%, 0);
+}
+
+.wrap {
+  @include min-max(320px, 1200px, 0);
+}
