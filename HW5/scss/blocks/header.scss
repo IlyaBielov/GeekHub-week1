@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 34px auto;
+  align-items: center;
+  
+  .header__menu {
+     flex-basis: 413px;
+    }
+}
