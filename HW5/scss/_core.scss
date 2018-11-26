@@ -9,14 +9,26 @@ body {
   background: url('../img/bg.svg');
   background-color: $white;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 950px;
 
 }
 
 .container {
-  @include min-max(320px, 100%, 0);
+  @include min-max(290px, 1600px, 15px);
 }
 
 .wrap {
-  @include min-max(320px, 1200px, 0);
+  @include min-max(290px, 1200px, 0)
+}
+
+@media (max-width: 976px) {
+  body {
+    background-size: 100% 750px;
+  }
+}
+
+@media (max-width: 612px) {
+  body {
+    background-size: 100% 650px;
+  }
 }
