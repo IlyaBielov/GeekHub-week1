@@ -77,6 +77,12 @@
   }
 }
 
+@media (max-width: 787px) {
+  .app {
+    margin-bottom: 70px;
+  }
+}
+
 @media (max-width: 612px) {
 
   .app {
@@ -84,13 +90,25 @@
     .app__description {
 
       .app__heading {
-        font-size: 3.125rem;
-        line-height: 55px;
-        margin: 0px 0 43px;
+        font-size: 4.0rem;
+        line-height: 70px;
+        margin: 43px 0;
       }
 
       p {
         font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .app {
+
+    .app__description {
+
+      .app__heading {
+        margin: 0 0 43px;
       }
     }
   }
