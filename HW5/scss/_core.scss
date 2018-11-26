@@ -4,11 +4,9 @@ html {
 }
 
 body {
-  height: 100%;
   font-family: 'Lato', sans-serif;
-  background: url('../img/bg.svg');
+  background: url('../img/bg.svg') no-repeat;
   background-color: $white;
-  background-repeat: no-repeat;
   background-size: 100% 950px;
 
 }
@@ -23,12 +21,12 @@ body {
 
 @media (max-width: 976px) {
   body {
-    background-size: 100% 750px;
+    background-size: 100% 600px;
   }
 }
 
-@media (max-width: 612px) {
+@media (max-width: 506px) {
   body {
-    background-size: 100% 650px;
+    background-size: 100% 500px;
   }
 }
