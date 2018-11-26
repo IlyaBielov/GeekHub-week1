@@ -1,7 +1,6 @@
 .header {
   display: flex;
   justify-content: space-between;
-  max-width: 80%;
   flex-wrap: wrap;
   margin: 34px auto;
   align-items: center;
@@ -11,8 +10,22 @@
     }
 }
 
-@media (max-width: 676px){
+@media (max-width: 568px){
+
   .header {
+    justify-content: center;
+
+    .header__logo {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 414px){
+  .header {
+    margin-top: 0px;
+    justify-content: space-between;
+
     .header__menu {
       flex-basis: 20px;
       position: relative;
@@ -21,8 +34,8 @@
       &::before {
         content: "";
         position: absolute;
-        top: -10px;
-        left: 0px;
+        top: -17px;
+        left: -10px;
         width: 30px;
         height: 4px;
         border-width: 10px 0px;
@@ -38,24 +51,29 @@
       
       &:hover {
         ul {
-          top: 14px;
-          right: -11px;
+          top: 7px;
+          right: -1px;
           display: block;
-          background-color: rgba($color: #000000, $alpha: .1);
+          background-image: linear-gradient(to top, #e32637, #d90647);
           border-top-left-radius: 50px;
           border-bottom-left-radius: 10px;
           border-bottom-right-radius: 10px;
-          padding: 10px 0;
+          padding: 0 0 10px;
 
           a {
-            padding: 10px 20px;
+            padding: 15px 25px;
             box-sizing: border-box;
             display: block;
             width: 100%;
             
             &:hover {
               text-decoration: none;
+              background-color: rgba($color: $white, $alpha: .2);
             }
+          }
+
+          .header__border-link {
+            border-top-left-radius: 25px 39px;  
           }
         }
       }
