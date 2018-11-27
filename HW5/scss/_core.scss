@@ -19,6 +19,13 @@ body {
   @include min-max(290px, 1200px, 0)
 }
 
+.line {
+  margin-top: 68px;
+  margin-bottom: 90px;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
 @media (max-width: 976px) {
   body {
     background-size: 100% 600px;
