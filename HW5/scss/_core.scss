@@ -43,4 +43,16 @@ body {
   body {
     background-size: 100% 500px;
   }
+  
+  .line {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width:358px) {
+  .bg {
+    background-size: 100% 483px;
+    background-position: center 78px;
+  }
 }
