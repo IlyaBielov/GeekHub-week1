@@ -1,0 +1,86 @@
+.skills {
+  margin-top: 156px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .skills__description {
+    padding-left: 15px;
+    padding-right: 95px;
+    
+
+    .skills__article {
+      margin-bottom: 64px;
+      max-width: 256px;
+      text-align: right;
+      position: relative;
+
+      .skills__title {
+        font-size: 1.5rem;
+        font-weight: 900;
+        line-height: 1.4;
+        letter-spacing: 1.4px;
+        color: $white;
+      }
+
+      .skills__text {
+        hyphens: auto;
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 0.96px;
+        color: rgba($white, .6);
+      }
+
+      .icon {
+        position: absolute;
+        top: -2px;
+        right: -92px;
+      }
+
+      .icon-2 {
+        position: absolute;
+        top: -2px;
+        left: -92px;
+      }
+    }
+
+    .skills__article--left {
+      text-align: left;
+    }
+  }
+
+  .skills__description--left {
+    padding-left: 95px;
+    padding-right: 15px;
+  }
+
+  .skills__logo {
+    position: relative;
+    
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 134px;
+      left: 26px;
+      opacity: 0.6;
+      background-color: #232323;
+      width: 292px;
+      height: 519px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 360px;
+      left: 140px;
+      width: 65px;
+      height: 65px;
+      background-image: url(../img/play-circle-1.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

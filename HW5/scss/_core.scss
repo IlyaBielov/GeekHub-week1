@@ -11,6 +11,13 @@ body {
 
 }
 
+.bg {
+  background-image: linear-gradient(to top, #eb402c, #d90647);
+  background-repeat: no-repeat;
+  background-size: 100% 517px;
+  background-position: center 85px;
+}
+
 .container {
   @include min-max(290px, 1600px, 15px);
 }
