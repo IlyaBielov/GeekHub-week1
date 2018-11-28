@@ -8,6 +8,7 @@
     .subscribe__title {
       font-size: 3.75rem;
       color: $title-color;
+      margin-bottom: 30px;
 
       span {
         background-image: linear-gradient(to top, #eb402c, #d90647);
@@ -78,6 +79,49 @@
 
       .subscribe__title {
         font-size: 3.0rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .subscribe {
+
+    .subscribe__element {
+
+      .subscribe__title {
+        font-size: 2.5rem;
+        margin-bottom: 0px;
+      }
+
+      .subscribe__text {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .subscribe {
+    margin-top: 0;
+
+    .subscribe__element {
+
+      .subscribe__title {
+        font-size: 2.0rem;
+      }
+    }
+
+    .subscribe__form {
+      margin-top: 0px;
+
+      .subscribe__input {
+        padding-right: 23px;
+        margin: 30px 0;
+      }
+
+      .subscribe__btn {
+        position: static;
       }
     }
   }
