@@ -1,0 +1,80 @@
+.download {
+  text-align: center;
+
+  .download__logo {
+    margin: 0 auto 55px;
+    width: 160px;
+    height: 160px;
+    border-radius: 35px;
+    box-shadow: 0px 10px 30px 0 rgba(223, 27, 61, 0.3);
+    background-image: linear-gradient(to top, #eb402c, #d90647);
+    background-repeat: no-repeat;
+
+    .logo {
+      box-sizing: border-box;
+      display: block;
+      padding: 40px;
+      color: $white;
+      font-size: 5rem;
+      font-weight: 900;
+    }
+  }
+
+  .download__article {
+
+    .download__title {
+      font-size: 3.75rem;
+      color: $title-color;
+      margin: 20px 0;
+
+      span {
+        background-image: linear-gradient(to top, #eb402c, #d90647);
+        color: $title-color;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .download__text {
+      font-size: 1.125rem;
+      line-height: 32px;
+      color: $p-color;
+    }
+
+  }
+
+  .download__btn {
+    display: inline-block;
+    margin: 53px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .download {
+
+    .download__article {
+
+      .download__title {
+        font-size: 2.0rem;
+      }
+  
+      .download__text {
+        font-size: 1.0rem;
+      }
+    }
+  }
+}
+
+@media (max-width:425px) {
+  .download {
+
+    .download__logo {
+      display: none;
+    }
+
+    .download__btn {
+      margin: 15px 0;
+    }
+  }
+}
