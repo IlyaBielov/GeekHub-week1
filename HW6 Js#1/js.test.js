@@ -152,3 +152,30 @@ expect((x < 6 && y > 1)).toEqual(true);
 expect((x == 5 || y == 5)).toEqual(true);
 expect(!(x == y)).toEqual(true);
 });
+
+test('test_type_conversion', () => {
+expect("Ilya" + 2).toEqual("Ilya2");
+expect("Ilya" - 2).toEqual(NaN);
+expect("Ilya" * 2).toEqual(NaN);
+expect([2,3,4] + "Ilya").toEqual("2,3,4Ilya");
+expect([1] + 1).toEqual("11");
+expect([1, "Ilya"] + {a : 1, B : 3}).toEqual("1,Ilya[object Object]");
+expect(function(){} + "Ilya").toEqual("function () {}Ilya");
+expect([2,3,4] - "Ilya").toEqual(NaN);
+expect([1] / 1).toEqual(1);
+expect([1, "Ilya"] * {a : 1, B : 3}).toEqual(NaN);
+expect(function(){} - "Ilya").toEqual(NaN);
+let x = "21";
+let y =+ x;
+expect(y).toEqual(21);
+expect(Number(x)).toEqual(21);
+expect(String(y)).toEqual("21");
+
+expect(Number([])).toEqual(0);
+expect(String([])).toEqual("");
+expect(Number(function(){})).toEqual(NaN);
+expect(String(function(){})).toEqual("function () {}");
+expect(Number("21")).toEqual(21);
+expect(String({})).toEqual("[object Object]");
+expect(Number({})).toEqual(NaN);
+});
