@@ -63,7 +63,63 @@ test('test_numbers', () => {
 });
 
 test('test_arrays', () => {
-expect().toEqual();
+expect(new Array()).toEqual([]);
+let arr = ["Ilya", "Bielov"];
+
+expect(["Ilya", "Bielov"].toString()).toEqual("Ilya,Bielov");
+expect(["Ilya", "Bielov"].join(" ")).toEqual("Ilya Bielov");
+
+expect(arr.pop()).toEqual("Bielov");
+expect(arr).toEqual(["Ilya"]);
+
+expect(arr.push("Bielov")).toEqual(arr.length);
+expect(arr).toEqual(["Ilya", "Bielov"]);
+
+expect(arr.shift()).toEqual("Ilya");
+expect(arr).toEqual(["Bielov"]);
+
+expect(arr.unshift("Ilya")).toEqual(arr.length);
+expect(arr).toEqual(["Ilya", "Bielov"]);
+
+arr[0]="Vasya";
+expect(arr).toEqual(["Vasya", "Bielov"]);
+
+arr[arr.length]="Vasya";
+expect(arr).toEqual(["Vasya", "Bielov", "Vasya"]);
+
+delete arr[0];
+expect(arr[0]).toEqual(undefined);
+
+arr.splice(0, 3, "Igorovich");
+expect(arr).toEqual(["Igorovich"]);
+arr.splice(0, 0, "Ilya", "Bielov");
+expect(arr).toEqual(["Ilya", "Bielov", "Igorovich"]);
+arr.splice(2, 1);
+expect(arr).toEqual(["Ilya", "Bielov"]);
+
+
+expect(arr.concat("Igorovich", arr))
+      .toEqual(
+        ["Ilya", "Bielov", "Igorovich", "Ilya", "Bielov"]
+      );
+expect(arr).toEqual(["Ilya", "Bielov"]);
+
+
+expect(arr.slice(1)).toEqual(["Bielov"]);
+expect(arr).toEqual(["Ilya", "Bielov"]);
+
+expect(["Ilya", "Bielov", "Igorovich"].slice(2, 3)).toEqual(["Igorovich"]);
+expect(["Ilya", "Bielov", "Igorovich"].slice(1)).toEqual(["Bielov", "Igorovich"]);
+
+expect(arr.sort()).toEqual(["Bielov", "Ilya"]);
+
+expect(arr.reverse()).toEqual(["Ilya", "Bielov"]);
+
+expect([40, 100, 1, 5, 25, 10].sort(function(a, b){return a - b})).toEqual([1, 5, 10, 25, 40, 100]);
+
+expect(arr.indexOf("Bielov")).toEqual(1);
+expect(arr.indexOf("Ilya", 1)).toEqual(-1);
+
 });
 
 test('test_compare_operators', () => {
