@@ -123,9 +123,32 @@ expect(arr.indexOf("Ilya", 1)).toEqual(-1);
 });
 
 test('test_compare_operators', () => {
-expect().toEqual();
+  
+let x = 5;
+let y = 3;
+expect(x == 8).toEqual(false);
+expect(x == 5).toEqual(true);
+expect(x == "5").toEqual(true);
+expect(x === 5).toEqual(true);
+expect(x === "5").toEqual(false);
+expect(x != 8).toEqual(true);
+expect(x !== 5).toEqual(false);
+expect(x !== "5").toEqual(true);
+expect(x !== 8).toEqual(true);
+expect(x > 8).toEqual(false);
+expect(x < 8).toEqual(true);
+expect(x >= 8).toEqual(false);
+expect(x <= 8).toEqual(true);
+expect(2 < "12").toEqual(true);
+expect("2" < "12").toEqual(false);
+expect("2" > "12").toEqual(true);
 });
 
 test('test_equality_comparison_algorithm', () => {
-expect().toEqual();
+
+let x = 5;
+let y = 3;
+expect((x < 6 && y > 1)).toEqual(true);
+expect((x == 5 || y == 5)).toEqual(true);
+expect(!(x == y)).toEqual(true);
 });
