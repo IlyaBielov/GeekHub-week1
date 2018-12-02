@@ -8,7 +8,7 @@ directories:
 before_install:
 - npm update
 install:
-- cd /home/mrbiela/Programming/GeekHub/HW6\ Js#1/package.json
+- cd HW6\ Js#1/package.json
 - npm install
 script:
 - npm test
