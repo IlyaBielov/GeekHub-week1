@@ -6,3 +6,13 @@
   margin: 0 auto;
   @content;
 }
+
+@mixin txt-bg() {
+  text-shadow: 0px 10px 30px rgba(223, 27, 61, 0.3);
+  color: #363636;
+  background-image: linear-gradient(to top, #eb402c, #d90647);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @content;
+}

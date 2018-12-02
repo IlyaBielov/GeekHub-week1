@@ -26,14 +26,6 @@
       font-size: 3.75rem;
       color: $title-color;
       margin: 20px 0;
-
-      span {
-        background-image: linear-gradient(to top, #eb402c, #d90647);
-        color: $title-color;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
     }
 
     .download__text {

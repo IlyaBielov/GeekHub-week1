@@ -8,7 +8,6 @@ body {
   background: url('../img/bg.svg') no-repeat;
   background-color: $white;
   background-size: 100% 950px;
-
 }
 
 .bg {
@@ -16,6 +15,10 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 517px;
   background-position: center 85px;
+}
+
+.txt-bg {
+  @include txt-bg();
 }
 
 .container {

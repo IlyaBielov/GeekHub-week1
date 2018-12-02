@@ -38,13 +38,6 @@
       color: $title-color;
       line-height: 65px;
       margin-bottom: 34px;
-
-      span {
-        background-image: linear-gradient(to top, #eb402c, #d90647), linear-gradient(to bottom, #363636, #363636);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
     }
 
     p {

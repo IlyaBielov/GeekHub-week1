@@ -7,14 +7,6 @@
     line-height: 70px;
     font-weight: 900;
     color: $title-color;
-
-    span {
-      background-image: linear-gradient(to top, #eb402c, #d90647);
-      color: $title-color;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 
   .reviews__wrap {
