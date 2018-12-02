@@ -1,4 +1,5 @@
 .reviews {
+  margin: 80px auto;
 
   .reviews__heading {
     margin-bottom: 125px;
@@ -32,15 +33,12 @@
         }
 
         .reviews__company {
-          background-image: linear-gradient(to top, #eb402c, #d90647);
           font-size: 1.125rem;
           font-weight: 900;
           line-height: 1.56;
           letter-spacing: 1.1px;
           color: $title-color;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+          @include txt-bg;
         }
 
         .reviews__angle {
@@ -122,8 +120,10 @@
             background-color: $white;
             transform: rotate(-47deg);
             top: 20px;
-            right: -12px;
+            right: -13px;
             left: auto;
+            border-right: 1px solid rgba(54, 54, 54, 0.15);
+            border-bottom: 1px solid rgba(54, 54, 54, 0.15);
           }
         }
         .reviews__author {
@@ -140,11 +140,6 @@
           box-shadow: none;
           transform: none;
           border: 1px solid rgba(54, 54, 54, 0.15);
-      
-          .reviews__angle {
-            border-right: 1px solid rgba(54, 54, 54, 0.15);
-            border-bottom: 1px solid rgba(54, 54, 54, 0.15);
-          }
         }
       }
     }

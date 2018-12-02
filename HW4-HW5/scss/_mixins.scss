@@ -8,8 +8,7 @@
 }
 
 @mixin txt-bg() {
-  text-shadow: 0px 10px 30px rgba(223, 27, 61, 0.3);
-  color: #363636;
+  color: $title-color;
   background-image: linear-gradient(to top, #eb402c, #d90647);
   -webkit-background-clip: text;
   background-clip: text;
