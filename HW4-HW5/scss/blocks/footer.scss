@@ -60,6 +60,10 @@
     
     .footer_flex {
       justify-content: center;
+
+      .footer__menu {
+        margin-bottom: 10px;
+      }
     }
   }
 }
