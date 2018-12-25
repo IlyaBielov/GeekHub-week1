@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
+  <script src="js/script.js"></script>
   <title>HW3</title>
 </head>
 
@@ -36,8 +37,57 @@
       </select>
     </div>
   </header>
-  <div class="slider">
-    <img src="images/slider.jpg" alt="slider">
+  <div id="slider" class="slider">
+    <div class="slider__img">
+      <img src="images/slider.jpg" alt="slider" class="slider__show">
+      <img src="images/slider1.jpg" alt="slider" class="slider__hidden">
+      <img src="images/slider2.jpg" alt="slider" class="slider__hidden">
+      <img src="images/slider3.jpg" alt="slider" class="slider__hidden">
+    </div>
+    <div class="slider__items">
+      <button id="prev" class="slider__button" type="button"><</button>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Нд</p>
+          <p class="data-number">21</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more">
+          
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Нд</p>
+          <p class="data-number">21</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more hidden">
+          
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Нд</p>
+          <p class="data-number">21</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more hidden">
+          
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Нд</p>
+          <p class="data-number">21</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more hidden">
+          
+        </div>
+      </div>
+      <button id="next" class="slider__button" type="button">></button>
+    </div>
   </div>
   <main>
     <div class="main-wrap centre-block-main">
