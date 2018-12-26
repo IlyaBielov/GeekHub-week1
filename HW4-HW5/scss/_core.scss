@@ -25,9 +25,8 @@ body {
   @include min-max(290px, 1200px, 0)
 }
 
-.line {
-  height: 1px;
-  background-color: $line;
+.border {
+  border-top: 1px solid $line;
 }
 
 @media (max-width: 976px) {
