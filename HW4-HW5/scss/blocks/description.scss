@@ -39,6 +39,12 @@
       color: $title-color;
       line-height: 65px;
       margin-bottom: 34px;
+
+      &:after {
+        content: " ."; 
+        display: inline;
+        @include txt-bg();
+      }
     }
 
     p {

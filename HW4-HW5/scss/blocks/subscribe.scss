@@ -9,6 +9,12 @@
       font-size: 3.75rem;
       color: $title-color;
       margin-bottom: 30px;
+
+      &:after {
+        content: " ."; 
+        display: inline;
+        @include txt-bg();
+      }
     }
 
     .subscribe__text {

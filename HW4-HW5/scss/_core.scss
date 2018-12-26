@@ -17,10 +17,6 @@ body {
   background-position: center 85px;
 }
 
-.txt-bg {
-  @include txt-bg();
-}
-
 .container {
   @include min-max(290px, 1600px, 15px);
 }

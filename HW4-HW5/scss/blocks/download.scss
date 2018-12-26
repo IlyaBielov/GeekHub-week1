@@ -28,6 +28,12 @@
       font-size: 3.75rem;
       color: $title-color;
       margin: 20px 0;
+
+      &:after {
+        content: " ."; 
+        display: inline;
+        @include txt-bg();
+      }
     }
 
     .download__text {
