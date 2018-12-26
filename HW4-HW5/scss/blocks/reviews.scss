@@ -47,17 +47,9 @@
           @include txt-bg;
         }
 
-        .reviews__angle {
-          position: absolute;
-          box-sizing: border-box;
-          width: 24px;
-          height: 24px;
-          background-color: $white;
-          transform: rotate(45deg);
-          border-right: 1px solid rgba(54, 54, 54, 0.15);
-          border-bottom: 1px solid rgba(54, 54, 54, 0.15);
-          left: 19px;
-          bottom: -13px;
+        &:after{
+          content: "";
+         @include angle();
         }
       }
 
@@ -66,8 +58,11 @@
         transform: translateY(-60px);
         border: none;
 
-        .reviews__angle {
-          border: none;
+        &:after {
+          content: "";
+          @include angle() {
+            border: none;
+          }; 
         }
       }
 
@@ -122,14 +117,16 @@
         .reviews__message {
           width: 100%;
 
-          .reviews__angle {
-            background-color: $white;
-            transform: rotate(-47deg);
-            top: 20px;
-            right: -13px;
-            left: auto;
-            border-right: 1px solid rgba(54, 54, 54, 0.15);
-            border-bottom: 1px solid rgba(54, 54, 54, 0.15);
+          &:after {
+            content: "";
+            @include angle() {
+              transform: rotate(-47deg);
+              top: 20px;
+              right: -13px;
+              left: auto;
+              bottom: auto;
+            };
+
           }
         }
         .reviews__author {

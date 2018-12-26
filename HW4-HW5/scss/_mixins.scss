@@ -15,3 +15,17 @@
   -webkit-text-fill-color: transparent;
   @content;
 }
+
+@mixin angle(){
+  position: absolute;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  background-color: $white;
+  transform: rotate(45deg);
+  border-right: 1px solid rgba(54, 54, 54, 0.15);
+  border-bottom: 1px solid rgba(54, 54, 54, 0.15);
+  left: 19px;
+  bottom: -13px;
+  @content;
+}
