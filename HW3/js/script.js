@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slider__item[item].classList.toggle("hidden");
   }
 
-  function prevSlider() {
+  function prevItem() {
     slider__img[item].classList.toggle("hidden");
     slider__item[item].classList.toggle("hidden");
 
@@ -28,5 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   buttom_next.addEventListener("click", nextItem);
-  buttom_prev.addEventListener("click", prevSlider);
+  buttom_prev.addEventListener("click", prevItem);
 });
