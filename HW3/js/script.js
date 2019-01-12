@@ -29,4 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buttom_next.addEventListener("click", nextItem);
   buttom_prev.addEventListener("click", prevItem);
+
+  //не знаю как сделать по клику на айтем
+  // for(let i = 0; i < item_length; i++) {
+  //   slider__item[i].previousElementSibling.addEventListener("click", () => {
+  //     slider__item[i].classList.remove("hidden");
+  //     slider__img[i].classList.remove("hidden");
+  //   });
+  // }
 });
