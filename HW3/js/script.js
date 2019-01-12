@@ -1,30 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
   let slider__img = document.querySelector(".slider__img").children;
   let slider__item = Array.from(document.querySelectorAll(".data-more")); // Просто заюзал посмотреть в чём разница
+  let slider__data = document.querySelectorAll(".data");
   let buttom_prev = document.querySelector("#prev");
   let buttom_next = document.querySelector("#next");
 
-    
   let item_length = slider__item.length;
   let item = 0;
-  function nextItem() {
+
+  function activeClasses(item) {
     slider__img[item].classList.toggle("hidden");
     slider__item[item].classList.toggle("hidden");
+    slider__data[item].classList.toggle("data-active");
+    slider__data[item].lastElementChild.classList.toggle("data-month-active");
+  }
+
+  function nextItem() {
+    activeClasses(item);
 
     item = (item + 1) % item_length;
 
-    slider__img[item].classList.toggle("hidden");
-    slider__item[item].classList.toggle("hidden");
+    activeClasses(item);
   }
 
   function prevItem() {
-    slider__img[item].classList.toggle("hidden");
-    slider__item[item].classList.toggle("hidden");
+    activeClasses(item);
 
     item = (item - 1 + item_length) % item_length;
 
-    slider__img[item].classList.toggle("hidden");
-    slider__item[item].classList.toggle("hidden");
+    activeClasses(item);
   }
 
   buttom_next.addEventListener("click", nextItem);

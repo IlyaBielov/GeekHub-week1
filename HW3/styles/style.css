@@ -339,6 +339,10 @@ a{color: #fff; text-decoration: none;}
   margin: 0 1px;
 }
 
+.data-active {
+  background-color: #e44927;
+}
+
 .data-day {
   font-size: 16.5px;
   color: rgba(255, 255, 255, 0.6);
@@ -358,6 +362,10 @@ a{color: #fff; text-decoration: none;}
   border-top: 1px solid #7d7c7c;
   width: 64px;
   padding: 3px 0;
+}
+
+.data-month-active {
+  border-color: #fff !important;
 }
 
 .data-more {
