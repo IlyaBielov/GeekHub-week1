@@ -31,14 +31,38 @@ document.addEventListener("DOMContentLoaded", () => {
     activeClasses(item);
   }
 
-  buttom_next.addEventListener("click", nextItem);
-  buttom_prev.addEventListener("click", prevItem);
+  buttom_next.addEventListener("click", () => {
+    nextItem();
+  });
+  buttom_prev.addEventListener("click", () => {
+    prevItem();
+  } );
 
-  //не знаю как сделать по клику на айтем
-  // for(let i = 0; i < item_length; i++) {
-  //   slider__item[i].previousElementSibling.addEventListener("click", () => {
-  //     slider__item[i].classList.remove("hidden");
-  //     slider__img[i].classList.remove("hidden");
-  //   });
-  // }
+  function getSlideByClick() {
+    for (let i = 0; i < item_length; i++) {
+      slider__item[i].previousElementSibling.addEventListener("click", e => {
+        for (let j = 0; j < item_length; j++) {
+          if (slider__item[i].previousElementSibling.className !== "data data-active") {
+            hideItem(j);
+          }
+        }
+        activeItem(i);
+        item = i;
+        // console.log(e.target);
+      });
+    }
+    function hideItem(argument) {
+      slider__item[argument].previousElementSibling.classList.remove("data-active");
+      slider__data[argument].lastElementChild.classList.remove("data-month-active");
+      slider__item[argument].classList.add("hidden");
+      slider__img[argument].classList.add("hidden");
+    }
+    function activeItem(argument) {
+      slider__item[argument].previousElementSibling.classList.add("data-active");
+      slider__data[argument].lastElementChild.classList.add("data-month-active");
+      slider__item[argument].classList.remove("hidden");
+      slider__img[argument].classList.remove("hidden");
+    }
+  }
+  getSlideByClick();
 });
