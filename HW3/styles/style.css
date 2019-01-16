@@ -265,6 +265,18 @@ a{color: #fff; text-decoration: none;}
   position: relative;
 }
 
+.slider__imgs .slider__img {
+  display: none;
+}
+
+.active {
+  display: inline-flex !important;
+}
+
+.data-active {
+  background: #dd492a;
+}
+
 .slider__items {
   cursor: pointer;
   position: absolute;
@@ -328,11 +340,6 @@ a{color: #fff; text-decoration: none;}
   background-image: linear-gradient(to top, #dd492a, #e54b2b);
 }
 
-
-.hidden {
-  display: none !important;
-}
-
 .data {
   width: 92px;
   height: 93px;
@@ -374,7 +381,7 @@ a{color: #fff; text-decoration: none;}
 .data-more {
   position: relative;
   box-sizing: border-box;
-  display: inline-flex;
+  display: none;
   justify-content: space-between;
   align-items: flex-end;
   width: 464px;
