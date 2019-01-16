@@ -276,6 +276,12 @@ a{color: #fff; text-decoration: none;}
   transform: translateX(-50%);
 
 }
+
+.slider__item {
+  display: flex;
+  justify-content: space-between;
+}
+
 .slider__button {
   position: relative;
   margin: 0 5px;
@@ -322,9 +328,6 @@ a{color: #fff; text-decoration: none;}
   background-image: linear-gradient(to top, #dd492a, #e54b2b);
 }
 
-.slider__item {
-  display: flex;
-}
 
 .hidden {
   display: none !important;
