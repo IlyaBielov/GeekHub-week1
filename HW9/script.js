@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function getRandomNumberFirst() {
     let num = (Math.random() * 10).toFixed();
 
-    setTimeout(() => {
-      console.log(num);
-    }, 1000);
+      setTimeout(() => {
+        console.log(num);
+      }, 1000);
 
     return num;
   }
@@ -41,22 +41,26 @@ document.addEventListener("DOMContentLoaded", () => {
   //getByCallBack();
 
   function getByPromise() {
-    let newRequest = new Promise((resolve, reject) => {
-      let xhttp = new XMLHttpRequest();
+    return new Promise((resolve, reject) => {
+      let xhttp = new XMLHttpRequest();  
       xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
           resolve(this.responseText);
         }
-      };
+      }
+      xhttp.onload = function() {
+        if (this.status !== 200) {
+          reject(this.status);
+        }
+      }
       xhttp.open("GET", `http://apistaging.theatre.pp.ua/posts.json?limit=${limitNumber}&page=${pageNumber}`);
       xhttp.send();
     });
-
-    newRequest.then((resolve) => {
-      console.log(JSON.parse(resolve));
-    });
   }
-  //getByPromise();
+
+  getByPromise()
+      .then(resolve => console.log(JSON.parse(resolve)))
+      .catch(error => console.error(error));
 
   function getByAsync() {
     let newRequest = new Promise((resolve, reject) => {
@@ -75,5 +79,5 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(JSON.parse(posts));
     })();
   }
-  getByAsync();
+  //getByAsync();
 });
