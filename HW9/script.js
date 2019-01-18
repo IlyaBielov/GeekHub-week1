@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(JSON.parse(callback));
     });
   }
-  //getByCallBack();
 
   function getByPromise() {
     return new Promise((resolve, reject) => {
@@ -58,26 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  getByPromise()
-      .then(resolve => console.log(JSON.parse(resolve)))
-      .catch(error => console.error(error));
-
-  function getByAsync() {
-    let newRequest = new Promise((resolve, reject) => {
-      let xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          resolve(this.responseText);
-        }
-      };
-      xhttp.open("GET", `http://apistaging.theatre.pp.ua/posts.json?limit=${limitNumber}&page=${pageNumber}`);
-      xhttp.send();
-    });
-
-    (async () => {
-      let posts = await newRequest;
+  async function getByAsync() {
+    
+    try {
+      let posts = await getByPromise();
       console.log(JSON.parse(posts));
-    })();
-  }
-  //getByAsync();
+    } catch {
+      throw new Error("Somthing wrong");
+    }
+
+  };
+
+  getByCallBack();
+
+  getByPromise()
+    .then(resolve => console.log(JSON.parse(resolve)))
+    .catch(error => console.error(error));
+
+  getByAsync();
 });
