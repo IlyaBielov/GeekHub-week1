@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   function getRandomNumberFirst() {
-    let num = (Math.random() * 10).toFixed();
+    let num = (Math.random() * 10 + 1).toFixed();
 
       setTimeout(() => {
-        console.log(num);
+        console.info(`Posts: ${num}`);
       }, 1000);
 
     return num;
   }
 
   function getRandomNumberSecond() {
-    let num = (Math.random() * 10).toFixed();
+    let num = (Math.random() * 10/2 + 1).toFixed() ;
 
     setTimeout(() => {
-      console.log(num);
+      console.info(`Page: ${num}`);
     }, 2000);
 
     return num;
