@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
+  <script src="js/script.js"></script>
   <title>HW3</title>
 </head>
 
@@ -32,12 +33,101 @@
       <select class="lang" name="lang" id="lang">
         <option value="EN">Eng</option>
         <option value="RU">Рус</option>
-        <option value="UA">Укр</option>
       </select>
     </div>
   </header>
-  <div class="slider">
-    <img src="images/slider.jpg" alt="slider">
+  <div id="slider" class="slider">
+    <div class="slider__imgs">
+      <img src="images/slider/slider.jpg" alt="slider" class="slider__img">
+      <img src="images/slider/slider1.jpg" alt="slider" class="slider__img">
+      <img src="images/slider/slider2.jpg" alt="slider" class="slider__img">
+      <img src="images/slider/slider3.jpg" alt="slider" class="slider__img">
+      <img src="images/slider/slider4.jpg" alt="slider" class="slider__img">
+    </div>
+    <div class="slider__items">
+      <button id="prev" class="slider__button prev" type="button"></button>
+      <div class="slider__item">
+        <div class="data data-active">
+          <p class="data-day">Нд</p>
+          <p class="data-number">21</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more active">
+          <div class="data-more__content">
+            <h2 class="data-more__heding">Сад гетсиманський</h2>
+            <p class="data-more__txt">Народна трагедія на 2 дії</p>
+            <p class="data-more__txt">Тривалість вистави 2 год 20 хв.</p>
+          </div>
+          <button class="data-more__button" type="button">купити квиток</button>
+          <img class="data-kod" src="images/slider/kod.png" alt="kod">
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Пн</p>
+          <p class="data-number">22</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more">
+          <div class="data-more__content">
+            <h2 class="data-more__heding">Сад гетсиманський</h2>
+            <p class="data-more__txt">Народна трагедія на 2 дії</p>
+            <p class="data-more__txt">Тривалість вистави 2 год 20 хв.</p>
+          </div>
+          <button class="data-more__button" type="button">купити квиток</button>
+          <img class="data-kod" src="images/slider/kod.png" alt="kod">
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Пн</p>
+          <p class="data-number">22</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more">
+          <div class="data-more__content">
+            <h2 class="data-more__heding">Сад гетсиманський</h2>
+            <p class="data-more__txt">Народна трагедія на 2 дії</p>
+            <p class="data-more__txt">Тривалість вистави 2 год 20 хв.</p>
+          </div>
+          <button class="data-more__button" type="button">купити квиток</button>
+          <img class="data-kod" src="images/slider/kod.png" alt="kod">
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Чт</p>
+          <p class="data-number">25</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more">
+          <div class="data-more__content">
+            <h2 class="data-more__heding">Сад гетсиманський</h2>
+            <p class="data-more__txt">Народна трагедія на 2 дії</p>
+            <p class="data-more__txt">Тривалість вистави 2 год 20 хв.</p>
+          </div>
+          <button class="data-more__button" type="button">купити квиток</button>
+          <img class="data-kod" src="images/slider/kod.png" alt="kod">
+        </div>
+      </div>
+      <div class="slider__item">
+        <div class="data">
+          <p class="data-day">Пт</p>
+          <p class="data-number">26</p>
+          <p class="data-month">Лютого</p>
+        </div>
+        <div class="data-more">
+            <div class="data-more__content">
+              <h2 class="data-more__heding">Сад гетсиманський</h2>
+              <p class="data-more__txt">Народна трагедія на 2 дії</p>
+              <p class="data-more__txt">Тривалість вистави 2 год 20 хв.</p>
+            </div>
+            <button class="data-more__button" type="button">купити квиток</button>
+            <img class="data-kod" src="images/slider/kod.png" alt="kod">
+          </div>
+      </div>
+      <button id="next" class="slider__button next" type="button"></button>
+    </div>
   </div>
   <main>
     <div class="main-wrap centre-block-main">
