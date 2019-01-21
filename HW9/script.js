@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     callback(this.responseText);
                 }
             };
-            xhttp.open("GET", `http://apistaging.theatre.pp.ua/posts.json?limit=11&page=1`);
+            xhttp.open("GET", `http://apistaging.theatre.pp.ua/posts.json?limit=${limitNumber}&page=${pageNumber}`);
             xhttp.send();
         };
         getPost((responseText) => {
