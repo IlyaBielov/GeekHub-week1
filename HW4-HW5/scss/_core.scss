@@ -1,0 +1,49 @@
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: url('../img/bg.svg') no-repeat;
+  background-color: $white;
+  background-size: 100% 950px;
+}
+
+.bg {
+  background-image: linear-gradient(to top, #eb402c, #d90647);
+  background-repeat: no-repeat;
+  background-size: 100% 517px;
+  background-position: center 85px;
+}
+
+.container {
+  @include min-max(290px, 1600px, 15px);
+}
+
+.wrap {
+  @include min-max(290px, 1200px, 0)
+}
+
+.border {
+  border-top: 1px solid $line;
+}
+
+@media (max-width: 976px) {
+  body {
+    background-size: 100% 600px;
+  }
+}
+
+@media (max-width: 506px) {
+  body {
+    background-size: 100% 500px;
+  }
+}
+
+@media (max-width:358px) {
+  .bg {
+    background-size: 100% 483px;
+    background-position: center 78px;
+  }
+}

@@ -1,0 +1,31 @@
+@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+  @content;
+}
+
+@mixin txt-bg() {
+  color: $title-color;
+  background-image: linear-gradient(to top, #eb402c, #d90647);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @content;
+}
+
+@mixin angle(){
+  position: absolute;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  background-color: $white;
+  transform: rotate(45deg);
+  border-right: 1px solid rgba(54, 54, 54, 0.15);
+  border-bottom: 1px solid rgba(54, 54, 54, 0.15);
+  left: 19px;
+  bottom: -13px;
+  @content;
+}

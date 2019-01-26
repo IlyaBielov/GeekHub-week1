@@ -1,0 +1,132 @@
+.description {
+  margin-bottom: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+  .description__img {
+    position: relative;
+    margin-left: 120px;
+
+
+    .description__second{
+      position: absolute;
+      top: -59px;
+      left: -170px;
+      z-index: -1;
+    }
+  }
+
+  .description__img--position {
+    margin-left: 0px;
+    margin-right: 142px;
+
+    .description__second{
+      position: absolute;
+      top: -59px;
+      left: 230px;
+      z-index: -1;
+    }
+  }
+
+  .description__text {
+    flex-basis: 557px;
+
+    .description__title {
+      font-size: 3.75rem;
+      font-weight: 900;
+      color: $title-color;
+      line-height: 65px;
+      margin-bottom: 34px;
+
+      &:after {
+        content: " ."; 
+        display: inline;
+        @include txt-bg();
+      }
+    }
+
+    p {
+      color: $p-color;
+      font-size: 1.125rem;
+      line-height: 1.78;
+    }
+  }
+
+  .description__text--order {
+    order: -1;
+  }
+}
+
+@media (max-width: 976px) {
+  .description {
+
+    .description__img {
+      margin-left: 0px;
+
+      .description__second {
+        display: none;
+      }
+    }
+
+    .description__img--position {
+      margin-right: 0px;
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .description {
+
+    .description__text {
+
+      .description__title {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: $title-color;
+        line-height: 65px;
+        margin-bottom: 34px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .description {
+    margin-top: 70px;
+    margin-bottom: 50px;
+
+    .description__img {
+
+      .description__first {
+        display: none;
+      }
+    }
+    .description__text {
+      flex-basis: 100%;
+
+      .description__title {
+        text-align: center;
+      }
+
+      p {
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media (max-width: 368px) {
+  .description {
+
+    .description__text {
+      flex-basis: 100%;
+
+      .description__title {
+        text-align: center;
+        font-size: 2.3rem;
+      }
+    }
+  }
+}

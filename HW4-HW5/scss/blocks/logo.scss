@@ -1,0 +1,13 @@
+.logo {
+
+  a {
+    font-size: 49.5px;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

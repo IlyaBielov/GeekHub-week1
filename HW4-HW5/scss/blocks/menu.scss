@@ -1,0 +1,21 @@
+.menu {
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    a {
+      font-size: 1.125rem;
+      line-height: 1.56;
+      font-weight: 400;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
