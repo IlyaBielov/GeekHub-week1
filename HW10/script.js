@@ -22,56 +22,65 @@ class Point {
 }
 
 class Shape {
-    constructor(x, y) {
-        this._x = x;
-        this._y = y;
+    /**
+     * @param {object} center
+     */
+    constructor(center) {
+        this._center = center;
     }
 
-    get point() {
-        return new Point(this._x, this._y);
+    /**
+     * @return {object}
+     */
+    get center() {
+        return this._center;
     }
 }
 
 class Polygon extends Shape {
-    constructor(center, ...points) {
-        super(...points);
-        this._center = center;
-        this._vetrex = [this.point.x, this.point.y];
+    /**
+     * @param {object} center
+     * @param {Array} points
+     */
+    constructor(center, points) {
+        super(center);
+        this._points = points;
+        // this._vertices = points;
     }
 
-    get numberOfSides() {
-        return this._n.length;
+    /**
+     * @return {Array}
+     */
+    get points() {
+        return this._points;
     }
 
-    set x1(x1) {
-        return this._x1 = x1;
-    }
-
-    set y1(y1) {
-        return this._y1 = y1;
-    }
-
+    /**
+     * @return {number}
+     */
     perimeter() {
-        this._res = this.point.getPointAtOffset(this._x1, this._y1);
-        this._n = [
-            this.point.getDistance(this._res),
-            this.point.getDistance(this._res),
-            this.point.getDistance(this._res),
-            this.point.getDistance(this._res),
-            this.point.getDistance(this._res),
-            this.point.getDistance(this._res),
-        ];
+        this._sides = [];
+        this._perimeter = 0;
+        for (let i = 0; i < this._points.length; i++) {
+            if (i === this._points.length - 1) {
+                this._sides[i] = +((this._points[i].getDistance(this._points[0])).toFixed(2));
+            } else {
+                this._sides[i] = +((this._points[i].getDistance(this._points[i + 1])).toFixed(2));
+            }
+            this._perimeter = this._perimeter + this._sides[i];
+        }
+        return this._perimeter;
 
-        return this._n.length * this._n[0];
     }
 }
 
-const polygon = new Polygon(0, 21, 20);
+const center = new Point(25, 10);
+const points = [];
 
-polygon.x1 = 15;
-polygon.y1 = 25;
+for (let i = 0; i < 6; i++) {
+    const rand = (Math.random() * 100 + 2).toFixed();
+    points[i] = new Point(+rand + 1, +rand - 1);
+}
 
-const perimeter = polygon.perimeter().toFixed();
-
-console.log(`Number of Sides: ${polygon.numberOfSides}`)
-console.log(`Perimeter: ${perimeter}`);
+const polygon = new Polygon(center, points);
+console.log(polygon.perimeter());
