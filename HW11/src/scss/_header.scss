@@ -1,0 +1,52 @@
+.header {
+    position: relative;
+    background-color: #d55c5a;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    .heading {
+        margin: 0;
+        text-align: center;
+        font-size: 4rem;
+        color: #514945;
+    }
+
+    .header__ipnut {
+        box-sizing: border-box;
+        width: 100%;
+        height: 45px;
+        padding: 5px 15px;
+        font-size: 1.5rem;
+        border: none;
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        background-color: #ebd4cc;
+        color: #514945;
+    }
+
+    .header__button {
+        display: block;
+        position: absolute;
+        bottom: -30px;
+        left: 366px;
+        appearance: none;
+        border: none;
+        width: 25%;
+        height: 30px;
+        font-size: 2rem;
+        line-height: 0;
+        font-weight: 900;
+        background-color: #ebd4cc;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color: #514945;
+        outline: transparent;
+
+        &:hover {
+            background-color: #894242;
+            color: #fff;
+        }
+    }
+}
+
+
