@@ -23,7 +23,7 @@ class Point {
 
 class Shape {
     /**
-     * @param {object} center
+     * @param {Point} center
      */
     constructor(center) {
         this._center = center;
@@ -39,8 +39,8 @@ class Shape {
 
 class Polygon extends Shape {
     /**
-     * @param {object} center
-     * @param {Array} points
+     * @param {Point} center
+     * @param {Point[]} points
      */
     constructor(center, points) {
         super(center);
@@ -70,7 +70,6 @@ class Polygon extends Shape {
             this._perimeter = this._perimeter + this._sides[i];
         }
         return this._perimeter;
-
     }
 }
 
