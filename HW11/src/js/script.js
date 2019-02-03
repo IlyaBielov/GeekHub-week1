@@ -1,69 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    class ListForm {
-        /**
-         * @param {headerIpnut.value} text 
-         */
-        constructor(text = '') {
-            this._form = document.createElement('form');
-            this._form.classList.add('list__form');
-
-            this._inputTask = document.createElement('input');
-            this._inputTask.classList.add('list__task');
-            this._inputTask.setAttribute('type', 'text');
-            this._inputTask.value = text;
-
-            this._checkbox = document.createElement('input');
-            this._checkbox.classList.add('list__checkbox');
-            this._checkbox.setAttribute("type", "checkbox");
-            this._checkbox.setAttribute("name", "list__checkbox");
-            this._checkbox.setAttribute("id", "list__checkbox");
-
-            this._button = document.createElement('button');
-            this._button.classList.add('list__button');
-            this._button.setAttribute("type", "button");
-            this._button.setAttribute("value", "");
-            this._button.innerHTML = "&Cross;";
-
-            this._form.appendChild(this._inputTask);
-            this._form.appendChild(this._checkbox);
-            this._form.appendChild(this._button);
-
-            this._checkbox.addEventListener('click', () => {
-                if (this._inputTask.disabled !== true) {
-                    this._inputTask.disabled = true;
-                } else {
-                    this._inputTask.disabled = false;
-                }
-            });
-
-            this._button.addEventListener('click', () => {
-                this._form.remove();
-            });
-        }
-
-        get form() {
-            return this._form;
-        }
-    }
-
     const headerIpnut = document.querySelector(".header__ipnut");
     const list = document.querySelector('.list');
     const headerButton = document.querySelector('.header__button');
 
+    class ListForm {
+        /**
+         * @param {string} nameClass 
+         * @param  {...Node} elements 
+         */
+        constructor(nameClass, ...elements) {
+            this._form = document.createElement('form');
+            this._form.classList.add(nameClass);
+
+            if (elements.length > 0) {
+                for (const elem of elements) {
+                    this._form.appendChild(elem);
+                }
+            }
+        }
+
+        get getForm() {
+            return this._form;
+        }
+    }
+
+    class ElemForm {
+        /**
+         * @param {string} className 
+         * @param {string} type 
+         * @param {string} value 
+         */
+        constructor(className, type, value = '') {
+            this._elemForm = document.createElement('input');
+            this._elemForm.classList.add(className);
+            this._elemForm.setAttribute('type', type);
+            this._elemForm.setAttribute('value', value);
+            this._elemForm.setAttribute('name', className);
+
+            if (type === 'button') {
+                this._elemForm.addEventListener('click', () => {
+                   this._elemForm.parentElement.remove();
+                });
+            }
+
+            if (type === 'checkbox') {
+                this._elemForm.addEventListener('click', () => {
+                    const listTask = this._elemForm.parentElement.querySelector('.list__task');
+                    if (listTask.disabled !== true) {
+                        listTask.disabled = true;
+                    } else if(listTask.disabled === true) {
+                        listTask.disabled = false;
+                    }
+                });
+            }
+        }
+
+        get getElem() {
+            return this._elemForm;
+        }
+    }
+
     headerButton.addEventListener('click', function () {
         if (headerIpnut.value !== "") {
-            const listForm = new ListForm(headerIpnut.value);
-            list.appendChild(listForm.form);
+            const checkbox = new ElemForm('list__checkbox', 'checkbox');
+            const button = new ElemForm('list__button', 'button', '⨯');
+            const input = new ElemForm('list__task', 'text', headerIpnut.value);
+            const form = new ListForm("list__form", input.getElem, button.getElem, checkbox.getElem);
+            list.appendChild(form.getForm);
             headerIpnut.value = "";
         }
     });
 
     headerIpnut.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            if (headerIpnut.value !== "") {
-                const listForm = new ListForm(headerIpnut.value);
-                list.appendChild(listForm.form);
+        if (headerIpnut.value !== "") {
+            if (e.key === 'Enter') {
+                const checkbox = new ElemForm('list__checkbox', 'checkbox');
+                const button = new ElemForm('list__button', 'button', '⨯');
+                const input = new ElemForm('list__task', 'text', headerIpnut.value);
+                const form = new ListForm("list__form", input.getElem, button.getElem, checkbox.getElem);
+                list.appendChild(form.getForm);
                 headerIpnut.value = "";
             }
         }
