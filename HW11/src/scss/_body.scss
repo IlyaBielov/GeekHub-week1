@@ -56,6 +56,7 @@
             }
 
             .list__task {
+                margin-bottom: 10px;
                 padding: 0 50px;
                 border: none;
                 box-sizing: border-box;
@@ -66,7 +67,10 @@
                 color: #514945;
                 font-style: italic;
                 text-align: center;
-            
+
+                &:disabled {
+                    text-decoration: line-through;
+                }
             }
         }
     }
