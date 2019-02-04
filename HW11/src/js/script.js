@@ -4,27 +4,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const header__button = document.querySelector('.header__button');
 
     const list = document.querySelector('.list');
-    const form = document.querySelector('.list__form');
+    const item = document.querySelector('.list__form');
 
-    function out(form) {
-        const newForm = form.cloneNode(true);
-        newForm.classList.remove('none');
-        newForm.firstElementChild.value = headerInput.value;
-
-        if (headerInput.value !== "") {
-            list.appendChild(newForm);
-        }
-        
-        headerInput.value = "";
-    }
-    
     header__button.addEventListener('click', function () {
-        out(form);        
-    });
+        if (headerInput.value !== "") {
+            
+            createTask(item);
 
-    headerInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            out(form);
+            headerInput.value = "";
+        } else {
+            alert('Enter your task');
         }
     });
+
+    /**
+    * @param {Element} item
+    */
+    function createTask(item) {
+        const newItem = item.cloneNode(true);
+
+        newItem.classList.remove('none');
+        newItem.querySelector('.list__task').value = headerInput.value;
+
+        newItem.querySelector('.list__checkbox').addEventListener('click', function () {
+            if (newItem.querySelector('.list__task').disabled !== true) {
+                newItem.querySelector('.list__task').disabled = true;
+            } else {
+                newItem.querySelector('.list__task').disabled = false;
+            }
+
+        });
+
+        newItem.querySelector('.list__button').addEventListener('click', function () {
+            newItem.remove();
+        });
+
+        list.appendChild(newItem);
+        return newItem;
+    }
 });
