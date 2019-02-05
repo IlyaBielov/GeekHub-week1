@@ -47,6 +47,16 @@
             color: #fff;
         }
     }
+
+    .header__contariner {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+
+        .header__all {
+            padding-left: 46px;
+        }
+    }
 }
 
 
