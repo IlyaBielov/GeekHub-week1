@@ -3,11 +3,11 @@ class Point {
     constructor(private x: number, private y: number) {
     }
 
-    public getX() {
+    public getX(): number {
         return this.x;
     }
 
-    public getY() {
+    public getY(): number {
         return this.y;
     }
 
@@ -25,7 +25,7 @@ class Shape {
     constructor(private center: Point) {
     }
 
-    getCenter(): object {
+    getCenter(): Point {
         return this.center;
     }
 }
@@ -35,7 +35,7 @@ class Polygon extends Shape {
     private perimeter: number = 0;
 
 
-    constructor(center: Point, protected points?: Array<Point>) {
+    constructor(center: Point, protected points: Array<Point>) {
         super(center);
     }
 
