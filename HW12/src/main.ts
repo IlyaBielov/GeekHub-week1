@@ -35,35 +35,95 @@ class Polygon extends Shape {
     private perimeter: number = 0;
 
 
-    constructor(center: Point, private points: Array<Point>) {
+    constructor(center: Point, protected points?: Array<Point>) {
         super(center);
     }
 
-    public getPoints(): Array<Point> {
+    public getVertices(): Array<Point> {
         return this.points;
     }
 
-    public getPerimeter() : number{
+    public getPerimeter(sides: number = 6): number {
 
-        for (let i = 0; i < this.points.length; i++) {
-            if (i === this.points.length - 1) {
+        for (let i = 0; i < sides; i++) {
+            if (i === sides - 1) {
                 this.sides[i] = +((this.points[i].getDistance(this.points[0])).toFixed(2));
             } else {
                 this.sides[i] = +((this.points[i].getDistance(this.points[i + 1])).toFixed(2));
             }
             this.perimeter = this.perimeter + this.sides[i];
         }
-        return +this.perimeter.toFixed(2);
+        return +this.perimeter.toFixed();
     }
 }
 
-const center: Point = new Point(25, 10);
-const points: Array<Point> = [];
+class Rectangle extends Polygon {
+    private area: number = 0;
 
-for (let i = 0; i < 6; i++) {
-    const rand = (Math.random() * 100 + 2).toFixed();
-    points[i] = new Point(+rand + 1, +rand - 1);
+    constructor(center: Point, private width: number, private height: number) {
+        super(center, points);
+    }
+
+    public getArea(): number {
+        this.area = (this.width * this.height);
+
+        return this.area;
+    }
+
+    public getPerimeter(): number {
+        return (this.width * 2 + this.height * 2);
+    }
 }
 
-const polygon: Polygon = new Polygon(center, points);
-console.log(polygon.getPerimeter());
+class Square extends Rectangle {
+    constructor(center: Point, width: number) {
+        super(center, width, width);
+    }
+}
+
+class Circle extends Shape {
+    private area: number = 0;
+
+    constructor(center: Point, private radius: number) {
+        super(center);
+    }
+
+    public getArea(): number {
+        this.area = (Math.PI * Math.pow(this.radius, 2));
+
+        return this.area;
+    }
+
+    public getPerimeter(): number {
+        return +((Math.PI * (this.radius * 2)).toFixed());
+    }
+}
+
+function createPoints(amount: number): void {
+    for (let i = 0; i < amount; i++) {
+        const rand = (Math.random() * 100 + 2).toFixed();
+        points[i] = new Point(+rand + 1, +rand - 1);
+    }
+}
+
+const points: Array<Point> = [];
+
+createPoints(6);
+
+interface IShapes {
+    Shape: Shape;
+    Polygon: Polygon;
+    Rectangle: Rectangle;
+    Square: Square;
+    Circle: Circle;
+    Point: Point;
+}
+
+const Shapes: IShapes = {
+    Shape: new Shape(this.Point),
+    Polygon: new Polygon(this.Point, points),
+    Rectangle: new Rectangle(this.Point, 50, 20),
+    Square: new Square(this.Point, 25),
+    Circle: new Circle(this.Point, 20),
+    Point: new Point(25, 10)
+};
