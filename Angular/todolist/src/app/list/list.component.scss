@@ -1,0 +1,101 @@
+.list__header {
+    margin-bottom: 1rem; 
+    .list__heading {
+        text-align: center;
+        font-size: 3.0rem;
+    }
+
+    .list__form {
+        outline: transparent;
+        display: flex;
+        justify-content: space-between;
+        
+        .list__input {
+            flex-grow: 1;
+            box-sizing: border-box;
+            padding: 0.2rem 0.6rem;
+            font-size: 1.5rem;
+            border: 0.125rem dashed #ccc;
+            outline: inherit;
+            transition: all 250ms ease;
+            
+            &:focus {
+                border-color: #45a3f5;
+                
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+
+        .list__button {
+            margin-left: 0.6rem;
+            padding: 0.2rem 0.6rem;
+            font-size: 1.5rem;
+            border: 0.125rem solid #ccc;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+            outline: inherit;
+            transition: border-color 250ms ease;
+
+            &:hover {
+                border-color: #45a3f5;
+            }
+
+            &:focus {
+                border-color: #45a3f5;
+            }   
+        }
+    }
+}
+
+.list__main {
+    .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+
+        .list__item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0; 
+            border-bottom: 0.07rem solid #ccc;
+            transition: border-bottom 250ms ease;
+
+            &:hover {
+                border-bottom: 0.07rem solid #45a3f5;
+            }
+
+            &.selected {
+                text-decoration: line-through;
+            }
+
+            .item__button {
+                appearance: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                background-color: transparent;
+                outline: inherit;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .delete {
+                    color: #ccc;
+                    transition: all 250ms ease;
+                    font-size: 1.3rem;
+
+                    &:hover {
+                        color: #dc0834;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
