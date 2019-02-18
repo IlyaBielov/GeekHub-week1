@@ -8,10 +8,10 @@ import { _appIdRandomProviderFactory } from '@angular/core/src/application_token
 })
 export class ListComponent implements OnInit {
   task: string = null;
-  todoList: Array<string> = [];
-  select: boolean = null;
+  todoList: Array<{ text: string, isCheked: boolean }>;
 
   constructor() {
+    this.todoList = [];
   }
 
   ngOnInit() {
@@ -20,19 +20,18 @@ export class ListComponent implements OnInit {
   addTask(): void {
     if (this.task === null) { return; }
 
-    this.todoList.push(this.task);
+    this.todoList.push({
+      text: this.task,
+      isCheked: false
+    });
     this.task = null;
   }
 
-  onSelect(): void {
-      this.select = true;
+  resloveTask(idx: number): void {
+    this.todoList[idx].isCheked === true ? this.todoList[idx].isCheked = false : this.todoList[idx].isCheked = true;
   }
 
-  delteItem(item: string): void {
-    for (const i in this.todoList) {
-      if (this.todoList[i] === item) {
-        this.todoList.splice(+i, 1);
-      }
-    }
+  deleteTask(idx: number): void {
+    this.todoList.splice(idx, 1);
   }
 }

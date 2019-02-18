@@ -8,9 +8,12 @@
   </header>
   <main class="list__main list-wrap">
     <ul class="list">
-      <li class="list__item" *ngFor="let item of todoList">{{item}}
-        <button class="item__button" (click)="delteItem(item)">
-          <i class="material-icons delete">delete</i></button>
+      <li class="list__item" *ngFor="let item of todoList; let idx = index;" (click)="resloveTask(idx)"
+        [ngClass]="{'selected': item.isCheked}">
+        <span class="list__txt">{{item.text}}</span>
+        <button class="item__button" (click)="deleteTask(indx)">
+          <i class="material-icons delete">delete</i>
+        </button>
       </li>
     </ul>
   </main>

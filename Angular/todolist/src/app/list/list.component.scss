@@ -62,14 +62,26 @@
             justify-content: space-between;
             padding: 0.3rem 0; 
             border-bottom: 0.07rem solid #ccc;
-            transition: border-bottom 250ms ease;
+            transition: all 250ms ease;
 
             &:hover {
                 border-bottom: 0.07rem solid #45a3f5;
+
+                &:active {
+                    border-bottom: 0.07rem solid #45f580;
+                }
             }
 
             &.selected {
-                text-decoration: line-through;
+                border-bottom: 0.07rem solid #45f580;
+
+                &:hover {
+                    border-bottom: 0.07rem solid #45a3f5;
+
+                    &:active {
+                        border-bottom: 0.07rem solid #45f580;
+                    }
+                }
             }
 
             .item__button {
@@ -97,5 +109,3 @@
         }
     }
 }
-
-
