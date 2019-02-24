@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
   }
 
   resloveTask(idx: number): void {
-    this.todoList[idx].isCheked === true ? this.todoList[idx].isCheked = false : this.todoList[idx].isCheked = true;
+    this.todoList[idx].isCheked = !this.todoList[idx].isCheked;
   }
 
   deleteTask(idx: number): void {
