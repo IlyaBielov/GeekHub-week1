@@ -7,8 +7,8 @@ import { _appIdRandomProviderFactory } from '@angular/core/src/application_token
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  task: string = null;
   todoList: Array<{ text: string, isCheked: boolean }>;
+  text: string;
 
   constructor() {
     this.todoList = [];
@@ -18,20 +18,12 @@ export class ListComponent implements OnInit {
   }
 
   addTask(): void {
-    if (this.task === null) { return; }
+    if (this.text === null) { return; }
 
     this.todoList.push({
-      text: this.task,
+      text: this.text,
       isCheked: false
     });
-    this.task = null;
-  }
-
-  resloveTask(idx: number): void {
-    this.todoList[idx].isCheked = !this.todoList[idx].isCheked;
-  }
-
-  deleteTask(idx: number): void {
-    this.todoList.splice(idx, 1);
+    this.text = null;
   }
 }

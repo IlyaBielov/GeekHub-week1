@@ -1,0 +1,6 @@
+<div (click)="resloveTask()" class="list__item" [ngClass]="{'selected': task.isChecked}">
+  <span class="list__txt">{{task.text}}</span>
+  <button class="item__button" (click)="deleteTask()">
+    <i class="material-icons delete">delete</i>
+  </button>
+</div>
