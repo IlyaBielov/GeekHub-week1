@@ -1,0 +1,5 @@
+<ul class="list">
+  <li *ngFor="let item of todoList; let idx = index;">
+    <app-task [task]="item" (updateTask)="update($event, idx)"></app-task>
+  </li>
+</ul>

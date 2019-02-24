@@ -1,0 +1,42 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    
+    .form__input {
+        flex-grow: 1;
+        box-sizing: border-box;
+        padding: 0.2rem 0.6rem;
+        font-size: 1.5rem;
+        border: 0.125rem dashed #ccc;
+        outline: transparent;
+        transition: all 250ms ease;
+        
+        &:focus {
+            border-color: #45a3f5;
+            
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+
+    .form__button {
+        margin-left: 0.6rem;
+        padding: 0.2rem 0.6rem;
+        font-size: 1.5rem;
+        border: 0.125rem solid #ccc;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+        outline: transparent;
+        transition: border-color 250ms ease;
+
+        &:hover {
+            border-color: #45a3f5;
+        }
+
+        &:focus {
+            border-color: #45a3f5;
+        }   
+    }
+}
