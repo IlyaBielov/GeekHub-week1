@@ -11,6 +11,8 @@ export class TaskComponent implements OnInit {
   @Input() task: TodoList;
   @Output() updateTask = new EventEmitter();
 
+  editTaskVar = false;
+
   constructor() {
   }
 
@@ -23,5 +25,9 @@ export class TaskComponent implements OnInit {
 
   deleteTask() {
     this.updateTask.emit('delete');
+  }
+
+  editTask(): void {
+    this.editTaskVar = !this.editTaskVar;
   }
 }

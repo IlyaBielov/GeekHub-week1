@@ -24,27 +24,77 @@
             }
         }
     }
-    
-    .item__button {
-        appearance: none;
-        border: none;
-        padding-right: 0.5rem;
-        margin: 0;
-        background-color: transparent;
-        outline: inherit;
-    
-        &:hover {
-            cursor: pointer;
-        }
-    
-        .delete {
-            color: #ccc;
-            transition: all 250ms ease;
-            font-size: 1.3rem;
-    
+
+    .list__txt {
+        overflow: hidden;
+    }
+
+    .list__buttons {
+        
+        .delete__button {
+            appearance: none;
+            border: none;
+            padding-right: 0.5rem;
+            margin: 0;
+            background-color: transparent;
+            outline: none;
+        
             &:hover {
-                color: #dc0834;
+                cursor: pointer;
+            }
+        
+            .delete {
+                color: #ccc;
+                transition: all 250ms ease;
+                font-size: 1.3rem;
+        
+                &:hover {
+                    color: #f5455d;
+                }
             }
         }
+    
+        .edit__button {
+            appearance: none;
+            border: none;
+            padding-right: 0.5rem;
+            margin: 0;
+            background-color: transparent;
+            outline: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .edit {
+                color: #ccc;
+                transition: all 250ms ease;
+                font-size: 1.3rem;
+        
+                &:hover {
+                    color: #45a3f5;
+                }
+            }
+
+            .save {
+                color: #ccc;
+                transition: all 250ms ease;
+                font-size: 1.3rem;
+        
+                &:hover {
+                    color: #f5d545;
+                }
+            }
+        }
+    }
+
+    .list__txt-edit {
+        position: relative;
+        top: -1px;
+        appearance: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        min-width: 90%;
     }
 }

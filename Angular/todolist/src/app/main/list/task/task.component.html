@@ -1,6 +1,21 @@
 <div (click)="resloveTask()" class="list__item" [ngClass]="{'selected': task.isChecked}">
-  <span class="list__txt">{{task.text}}</span>
-  <button class="item__button" (click)="deleteTask()">
-    <i class="material-icons delete">delete</i>
-  </button>
+  <span *ngIf="!editTaskVar; else input" class="list__txt">{{task.text}}</span>
+  <div class="list__buttons">
+    <button class="edit__button" (click)="editTask()">
+      <ng-container *ngIf="!editTaskVar; else button">
+        <i class="material-icons edit">edit</i>
+      </ng-container>
+    </button>
+    <button class="delete__button" (click)="deleteTask()">
+      <i class="material-icons delete">delete</i>
+    </button>
+  </div>
 </div>
+
+<ng-template #input>
+  <input type="text" class="list__txt-edit" [(ngModel)]="task.text">
+</ng-template>
+
+<ng-template #button>
+  <i class="material-icons save">save</i>
+</ng-template>
