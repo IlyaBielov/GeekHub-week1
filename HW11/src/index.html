@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>To Do list</title>
+</head>
+
+<body>
+  <header class="header wrap">
+    <h1 class="heading">Франкинштейн</h1>
+    <div class="header__contariner text">
+      <p class="header__done">Done: 0</p>
+      <p class="header__all">All: 0</p>
+      <p class="header__progress">In Progress: 0</p>
+    </div>
+    <input type="text" class="header__ipnut" value="">
+    <input type="button" value="+" class="header__button">
+  </header>
+
+  <main class="main wrap">
+    <section class="list">
+      <h2 class="list__heading">list</h2>
+      <ul class="list__ul">
+        <li class="list__li none">
+          <input class="list__task" type="text" value="">
+          <input class="list__button" type="button" value="⨯">
+          <input class="list__checkbox" type="checkbox" value="" name="list__checkbox">
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
