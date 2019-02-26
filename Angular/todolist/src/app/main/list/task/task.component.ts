@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { TodoList } from 'src/app/todoList';
 
 @Component({
@@ -8,15 +8,17 @@ import { TodoList } from 'src/app/todoList';
 })
 export class TaskComponent implements OnInit {
 
+  editTaskVar = false;
+
   @Input() task: TodoList;
   @Output() updateTask = new EventEmitter();
 
-  editTaskVar = false;
-
-  constructor() {
-  }
+  @ViewChild('focusInput') focusInput: ElementRef;
 
   ngOnInit() {
+  }
+
+  constructor() {
   }
 
   resloveTask(): void {
@@ -27,7 +29,16 @@ export class TaskComponent implements OnInit {
     this.updateTask.emit('delete');
   }
 
-  editTask(): void {
-    this.editTaskVar = !this.editTaskVar;
+  editTask() {
+    this.editTaskVar = true;
+
+    setTimeout(() => {
+      this.focusInput.nativeElement.focus();
+    }, 0);
   }
+
+  saveTask() {
+    this.editTaskVar = false;
+  }
+
 }
