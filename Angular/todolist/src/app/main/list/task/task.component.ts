@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { TodoList } from 'src/app/todoList';
+import { Task } from 'src/app/task';
+import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
   selector: 'app-task',
@@ -7,26 +8,31 @@ import { TodoList } from 'src/app/todoList';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
+  @Input() task: Task;
+  @Input() item: string;
 
-  editTaskVar = false;
-
-  @Input() task: TodoList;
-  @Output() updateTask = new EventEmitter();
+  @Output() taskMessage = new EventEmitter();
 
   @ViewChild('focusInput') focusInput: ElementRef;
 
-  ngOnInit() {
-  }
+  editTaskVar = false;
 
-  constructor() {
+  constructor(private todoListService: TodoListService) { }
+
+  ngOnInit() {
+    this.todoListService.putTodoList();
   }
 
   resloveTask(): void {
     this.task.isChecked = !this.task.isChecked;
+
+    this.todoListService.putTodoList();
   }
 
   deleteTask() {
-    this.updateTask.emit('delete');
+    this.taskMessage.emit('delete');
+
+    this.todoListService.putTodoList();
   }
 
   editTask() {
@@ -35,10 +41,13 @@ export class TaskComponent implements OnInit {
     setTimeout(() => {
       this.focusInput.nativeElement.focus();
     }, 0);
+
+    this.todoListService.putTodoList();
   }
 
   saveTask() {
     this.editTaskVar = false;
-  }
 
+    this.todoListService.putTodoList();
+  }
 }

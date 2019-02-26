@@ -1,4 +1,4 @@
-export class TodoList {
+export class Task {
     text: string;
     isChecked: boolean;
 }

@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
-  update(e, idx) {
+  deleteTask(e, idx) {
     if (e === 'delete') {
       this.todoListService.todoList.splice(idx, 1);
     }
