@@ -14,19 +14,14 @@ export class DataComponent implements OnInit {
   }
 
   get checkedItems(): number {
-    const res = this.todoListService.todoList.filter(item => item.isChecked);
-    return res.length;
-  }
-
-  get allItems(): number {
-    const res = this.todoListService.todoList;
+    let res = this.todoListService.todoList.filter(item => item.isChecked);
+    res = res.filter(item => !item.isDeleted);
     return res.length;
   }
 
   get inProgressItems(): number {
-    const res = this.todoListService.todoList.filter(item => !item.isChecked);
+    let res = this.todoListService.todoList.filter(item => !item.isChecked);
+    res = res.filter(item => !item.isDeleted);
     return res.length;
   }
-
-
 }

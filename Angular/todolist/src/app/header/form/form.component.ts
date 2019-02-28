@@ -20,8 +20,11 @@ export class FormComponent implements OnInit {
 
     this.todoListService.todoList.push({
       text: this.inputValue,
-      isChecked: false
+      isChecked: false,
+      isDeleted: false
     });
+
+    this.todoListService.putTodoList();
 
     this.inputValue = null;
   }

@@ -17,7 +17,11 @@ export class ListComponent implements OnInit {
 
   deleteTask(e, idx) {
     if (e === 'delete') {
-      this.todoListService.todoList.splice(idx, 1);
+      this.todoListService.todoList[idx].isDeleted = true;
     }
+  }
+
+  visible(idx) {
+    return !this.todoListService.todoList[idx].isDeleted;
   }
 }

@@ -8,7 +8,11 @@ export class TodoListService {
   todoList: Array<Task>;
 
   constructor() {
-    this.todoList = this.getLocalStarage() !== null ? this.getLocalStarage() : [];
+    if (this.getLocalStarage() !== null) {
+      this.todoList = this.getLocalStarage();
+    } else {
+      this.todoList = [];
+    }
   }
 
   putTodoList() {

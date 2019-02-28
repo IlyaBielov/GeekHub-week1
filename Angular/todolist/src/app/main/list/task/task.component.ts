@@ -9,8 +9,6 @@ import { TodoListService } from 'src/app/todo-list.service';
 })
 export class TaskComponent implements OnInit {
   @Input() task: Task;
-  @Input() item: string;
-
   @Output() taskMessage = new EventEmitter();
 
   @ViewChild('focusInput') focusInput: ElementRef;
@@ -19,9 +17,7 @@ export class TaskComponent implements OnInit {
 
   constructor(private todoListService: TodoListService) { }
 
-  ngOnInit() {
-    this.todoListService.putTodoList();
-  }
+  ngOnInit() { }
 
   resloveTask(): void {
     this.task.isChecked = !this.task.isChecked;
