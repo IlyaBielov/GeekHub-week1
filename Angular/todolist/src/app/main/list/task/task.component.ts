@@ -26,7 +26,7 @@ export class TaskComponent implements OnInit {
   }
 
   deleteTask() {
-    this.taskMessage.emit('delete');
+    this.task.isDeleted = true;
 
     this.todoListService.putTodoList();
   }

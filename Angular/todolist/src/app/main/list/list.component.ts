@@ -15,13 +15,4 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteTask(e, idx) {
-    if (e === 'delete') {
-      this.todoListService.todoList[idx].isDeleted = true;
-    }
-  }
-
-  visible(idx) {
-    return !this.todoListService.todoList[idx].isDeleted;
-  }
 }
