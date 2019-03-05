@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
@@ -6,12 +6,9 @@ import { TodoListService } from 'src/app/todo-list.service';
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.scss']
 })
-export class DataComponent implements OnInit {
+export class DataComponent {
 
   constructor(private todoListService: TodoListService) { }
-
-  ngOnInit() {
-  }
 
   get checkedItems(): number {
     let res = this.todoListService.todoList.filter(item => item.isChecked);

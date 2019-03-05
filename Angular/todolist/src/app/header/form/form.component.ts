@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { TodoListService } from 'src/app/todo-list.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   inputValue: string;
 
   constructor(private todoListService: TodoListService) {
-  }
-
-  ngOnInit() {
   }
 
   addTask(): void {
