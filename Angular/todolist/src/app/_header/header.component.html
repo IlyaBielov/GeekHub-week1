@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="flex-wrap">
+    <h1 [routerLink]="['/']" class="header__heading">{{title}}</h1>
+    
+    <app-data></app-data>
+
+    <nav class="menu-list">
+      <a class="link" [routerLink]="['/add']" routerLinkActive="active-link">Add Task</a>
+      <a class="link" [routerLink]="['/list']" routerLinkActive="active-link">List</a>
+    </nav>
+  </div>
+</header>

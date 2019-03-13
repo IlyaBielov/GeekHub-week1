@@ -1,15 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TaskComponent } from './main/list/task/task.component';
-import { HeaderComponent } from './header/header.component';
-import { FormComponent } from './header/form/form.component';
-import { MainComponent } from './main/main.component';
-import { ListComponent } from './main/list/list.component';
-import { AsideComponent } from './aside/aside.component';
-import { DataComponent } from './aside/data/data.component';
+import { TaskComponent } from './task/task.component';
+import { HeaderComponent } from './_header/header.component';
+import { FormComponent } from './form/form.component';
+import { MainComponent } from './_main/main.component';
+import { ListComponent } from './list/list.component';
+import { DataComponent } from './data/data.component';
+
+const appRoutes: Routes = [
+  { path: 'list', component: ListComponent },
+  { path: 'add', component: FormComponent },
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -19,12 +25,12 @@ import { DataComponent } from './aside/data/data.component';
     FormComponent,
     MainComponent,
     ListComponent,
-    AsideComponent,
     DataComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
