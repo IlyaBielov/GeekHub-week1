@@ -1,7 +1,7 @@
 .list__item {
     display: flex;
     justify-content: space-between;
-    padding: 0.3rem 0; 
+    padding: 0.4rem 0 0 0; 
     border-bottom: 0.07rem solid #ccc;
     transition: all 250ms ease;
 
@@ -97,4 +97,9 @@
         margin: 0;
         min-width: 90%;
     }
+}
+
+.date {
+    font-size: 0.8rem;
+    color: rgb(155, 155, 155);
 }

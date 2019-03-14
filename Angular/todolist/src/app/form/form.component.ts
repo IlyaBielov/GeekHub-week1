@@ -9,8 +9,10 @@ import { IdService } from 'src/app/id.service';
 })
 export class FormComponent {
   inputValue: string;
+  date: Date;
 
   constructor(private todoListService: TodoListService, private idService: IdService) {
+    this.date = new Date();
   }
 
   addTask(): void {
@@ -20,7 +22,8 @@ export class FormComponent {
       id: this.idService.id,
       text: this.inputValue,
       isChecked: false,
-      isDeleted: false
+      isDeleted: false,
+      date: this.date
     });
 
     this.todoListService.putTodoList();

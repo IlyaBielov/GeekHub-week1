@@ -3,3 +3,9 @@
     (keyup.enter)="addTask()">
   <button type="button" class="form__button" (click)="addTask()">+</button>
 </div>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="date">
+  <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+  <mat-datepicker #myDatepicker disabled="false"></mat-datepicker>
+</mat-form-field>
