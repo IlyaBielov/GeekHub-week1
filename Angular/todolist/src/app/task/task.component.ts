@@ -17,15 +17,17 @@ export class TaskComponent {
   constructor(private todoListService: TodoListService) { }
 
   resloveTask(): void {
-    this.task.isChecked = !this.task.isChecked;
+    if (this.task.status === 'new') {
+      this.task.status = 'done';
+    } else {
+      this.task.status = 'new';
+    }
 
-    this.todoListService.putTodoList();
+    this.todoListService.update(this.task).subscribe();
   }
 
   deleteTask() {
-    this.task.isDeleted = true;
-
-    this.todoListService.putTodoList();
+    this.todoListService.delete(this.task).subscribe();
   }
 
   editTask() {
@@ -34,13 +36,10 @@ export class TaskComponent {
     setTimeout(() => {
       this.focusInput.nativeElement.focus();
     }, 0);
-
-    this.todoListService.putTodoList();
   }
 
   saveTask() {
     this.editTaskVar = false;
-
-    this.todoListService.putTodoList();
+    this.todoListService.update(this.task).subscribe();
   }
 }

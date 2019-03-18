@@ -1,25 +1,46 @@
 import { Injectable } from '@angular/core';
 import { Task } from 'src/app/task';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoListService {
-  todoList: Array<Task>;
 
-  constructor() {
-    if (this.getLocalStarage() !== null) {
-      this.todoList = this.getLocalStarage();
-    } else {
-      this.todoList = [];
-    }
+  protected httpOptions = {
+    headers: new HttpHeaders({
+      owner: 'IlyaBielov'
+    }),
+    observe: 'response' as 'body',
+    params: new HttpParams()
+  };
+
+  constructor(private httpClient: HttpClient) { }
+
+  findAll(): Observable<any> {
+    return this.httpClient.get('https://api.todo-list.kotoblog.pp.ua/tasks', {
+      headers: new HttpHeaders({
+        owner: 'IlyaBielov'
+      }),
+      observe: 'body',
+      params: new HttpParams()
+    });
   }
 
-  putTodoList() {
-    localStorage.setItem('todoList', JSON.stringify(this.todoList));
+  findOne(id: string) {
+    return this.httpClient.get(`https://api.todo-list.kotoblog.pp.ua/tasks/${id}`, this.httpOptions);
   }
 
-  getLocalStarage(): Array<Task> {
-    return JSON.parse(localStorage.getItem('todoList'));
+  save(task: Task) {
+    return this.httpClient.post('https://api.todo-list.kotoblog.pp.ua/tasks', task, this.httpOptions);
+  }
+
+  update(task: Task) {
+    return this.httpClient.post(`https://api.todo-list.kotoblog.pp.ua/tasks/${task.id}`, task, this.httpOptions);
+  }
+
+  delete(task: Task) {
+    return this.httpClient.delete(`https://api.todo-list.kotoblog.pp.ua/tasks/${task.id}`, this.httpOptions);
   }
 }

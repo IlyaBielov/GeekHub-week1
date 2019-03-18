@@ -9,3 +9,8 @@
   <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
   <mat-datepicker #myDatepicker disabled="false"></mat-datepicker>
 </mat-form-field>
+
+<div class="author">
+  <label for="authorName">Your name</label>
+  <input id="authorName" type="text" [(ngModel)]="authorName">
+</div>

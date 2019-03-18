@@ -1,7 +1,13 @@
 export class Task {
     id: string;
-    text: string;
-    isChecked: boolean;
-    isDeleted: boolean;
-    date: Date;
+    title: string;
+    responsible: string;
+    dueDate: Date;
+    status: string;
 }
+
+// export enum Status {
+//     'new',
+//     'in progress',
+//     'done'
+// }

@@ -10,15 +10,17 @@ export class DataComponent {
 
   constructor(private todoListService: TodoListService) { }
 
-  get checkedItems(): number {
-    let res = this.todoListService.todoList.filter(item => item.isChecked);
-    res = res.filter(item => !item.isDeleted);
-    return res.length;
-  }
+  // get checkedItems(): number {
+  //   this.todoListService.findAll().subscribe(body => {
+  //     this.res = body.filter(task => task.status === 'done');
+  //   });
+  //   return this.res.length ? this.res.length : 0;
+  // }
 
-  get inProgressItems(): number {
-    let res = this.todoListService.todoList.filter(item => !item.isChecked);
-    res = res.filter(item => !item.isDeleted);
-    return res.length;
-  }
+  // get inProgressItems(): number {
+  //   this.todoListService.findAll().subscribe(body => {
+  //     this.res = body.filter(task => task.status === 'new');
+  //   });
+  //   return this.res.length ? this.res.length : 0;
+  // }
 }
