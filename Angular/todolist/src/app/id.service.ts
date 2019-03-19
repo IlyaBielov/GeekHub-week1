@@ -7,7 +7,6 @@ export class IdService {
 
   constructor() { }
 
-
   get id() {
     const s = [];
     const hexDigits = '0123456789abcdef';

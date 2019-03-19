@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
-import { Task } from 'src/app/task';
+import { Task, Status } from 'src/app/task';
 import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
@@ -17,10 +17,10 @@ export class TaskComponent {
   constructor(private todoListService: TodoListService) { }
 
   resloveTask(): void {
-    if (this.task.status === 'new') {
-      this.task.status = 'done';
+    if (this.task.status === Status.new) {
+      this.task.status = Status.done;
     } else {
-      this.task.status = 'new';
+      this.task.status = Status.new;
     }
 
     this.todoListService.update(this.task).subscribe();

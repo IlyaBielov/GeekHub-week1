@@ -3,11 +3,11 @@ export class Task {
     title: string;
     responsible: string;
     dueDate: Date;
-    status: string;
+    status: Status;
 }
 
-// export enum Status {
-//     'new',
-//     'in progress',
-//     'done'
-// }
+export enum Status {
+    new = 'new',
+    in_progress = 'in progress',
+    done = 'done'
+}
