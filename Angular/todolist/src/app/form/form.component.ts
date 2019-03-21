@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TodoListService } from 'src/app/todo-list.service';
 import { IdService } from 'src/app/id.service';
 import { Status } from '../task';
@@ -10,6 +10,8 @@ import { SnackBarService } from '../snack-bar.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
+  @ViewChild('focusInput') focusInput: ElementRef;
+
   inputValue: string;
   date: Date;
   authorName: string;
@@ -20,6 +22,7 @@ export class FormComponent {
   addTask(): void {
     if (!this.inputValue || !this.authorName || !this.date) {
       this.snack.openSnackBar('Fill the form', true);
+      this.focusInput.nativeElement.focus();
     }
 
     this.todoListService.save(

@@ -11,7 +11,7 @@ export class SnackBarService {
   openSnackBar(measage: string, toggle: boolean) {
     if (toggle) {
       this.snackBar.open(measage, 'done', {
-        duration: 5000,
+        duration: 3000,
       });
     }
   }

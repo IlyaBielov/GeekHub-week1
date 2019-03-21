@@ -3,7 +3,13 @@
     justify-content: space-between;
     flex-direction: column;
 
+    .form-item {
+        margin-right: 2.5rem;
 
+        &.form-item-full {
+            margin-right: 0;
+        }
+    }
 
     .from-wrap {
         display: flex;
@@ -14,10 +20,6 @@
         .button {
             align-self: center;
             flex-grow: 1;
-        }
-
-        .margin {
-            margin-right: 2.5rem;
         }
     }
 }

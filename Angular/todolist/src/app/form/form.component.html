@@ -1,6 +1,6 @@
 <form class="form">
-  <mat-form-field class="form-item">
-    <input matInput  #message required name="inputValue"
+  <mat-form-field class="form-item form-item-full">
+    <input matInput #focusInput #message required name="inputValue"
       placeholder="Task" [(ngModel)]="inputValue" (keyup.enter)="addTask()"
     >
     <button mat-button matSuffix mat-icon-button aria-label="Clear"
