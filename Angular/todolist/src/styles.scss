@@ -3,7 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; font-size: 16px * 1.5; }
+html, body { 
+    height: 100%; font-size: 16px * 1.5; 
+    background-color: rgb(245, 245, 245);
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .wrap {

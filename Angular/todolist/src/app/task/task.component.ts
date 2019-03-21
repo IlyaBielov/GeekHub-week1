@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { Task, Status } from 'src/app/task';
-import { TodoListService } from 'src/app/todo-list.service';
+import { TodoListService } from 'src/app/_Services/todo-list.service';
 
 @Component({
   selector: 'app-task',

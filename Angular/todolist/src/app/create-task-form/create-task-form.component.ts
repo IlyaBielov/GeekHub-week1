@@ -1,34 +1,32 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { TodoListService } from 'src/app/todo-list.service';
-import { IdService } from 'src/app/id.service';
+import { TodoListService } from 'src/app/_Services/todo-list.service';
 import { Status } from '../task';
-import { SnackBarService } from '../snack-bar.service';
+import { SnackBarService } from '../_Services/snack-bar.service';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: 'app-create-task-form',
+  templateUrl: './create-task-form.component.html',
+  styleUrls: ['./create-task-form.component.scss']
 })
-export class FormComponent {
+export class CreateTaskFormComponent {
   @ViewChild('focusInput') focusInput: ElementRef;
 
-  inputValue: string;
+  title: string;
   date: Date;
   authorName: string;
   massage: string;
 
-  constructor(private todoListService: TodoListService, private idService: IdService, private snack: SnackBarService) { }
+  constructor(private todoListService: TodoListService, private snack: SnackBarService) { }
 
   addTask(): void {
-    if (!this.inputValue || !this.authorName || !this.date) {
+    if (!this.title || !this.authorName || !this.date) {
       this.snack.openSnackBar('Fill the form', true);
       this.focusInput.nativeElement.focus();
     }
 
     this.todoListService.save(
       {
-        id: this.idService.id,
-        title: this.inputValue,
+        title: this.title,
         responsible: this.authorName,
         dueDate: this.date,
         status: Status.new

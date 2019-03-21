@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Task } from 'src/app/task';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoListService {
+
+  protected baseUrl = environment.apiUrl;
 
   protected httpOptions = {
     headers: new HttpHeaders({
@@ -19,7 +22,7 @@ export class TodoListService {
   constructor(private httpClient: HttpClient) { }
 
   findAll(): Observable<any> {
-    return this.httpClient.get('https://api.todo-list.kotoblog.pp.ua/tasks', {
+    return this.httpClient.get(this.baseUrl, {
       headers: new HttpHeaders({
         owner: 'IlyaBielov'
       }),
@@ -29,18 +32,18 @@ export class TodoListService {
   }
 
   findOne(id: string) {
-    return this.httpClient.get(`https://api.todo-list.kotoblog.pp.ua/tasks/${id}`, this.httpOptions);
+    return this.httpClient.get(this.baseUrl + id, this.httpOptions);
   }
 
   save(task: Task) {
-    return this.httpClient.post('https://api.todo-list.kotoblog.pp.ua/tasks', task, this.httpOptions);
+    return this.httpClient.post(this.baseUrl, task, this.httpOptions);
   }
 
   update(task: Task) {
-    return this.httpClient.post(`https://api.todo-list.kotoblog.pp.ua/tasks/${task.id}`, task, this.httpOptions);
+    return this.httpClient.post(this.baseUrl + task.id, task, this.httpOptions);
   }
 
   delete(task: Task) {
-    return this.httpClient.delete(`https://api.todo-list.kotoblog.pp.ua/tasks/${task.id}`, this.httpOptions);
+    return this.httpClient.delete(this.baseUrl + task.id, this.httpOptions);
   }
 }

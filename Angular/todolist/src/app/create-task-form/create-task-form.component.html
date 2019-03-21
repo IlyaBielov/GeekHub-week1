@@ -1,8 +1,9 @@
+<h2 class="heading">Create task</h2>
 <form class="form">
   <mat-form-field class="form-item form-item-full">
-    <input matInput #focusInput required name="inputValue" placeholder="Task" [(ngModel)]="inputValue"
+    <input matInput #focusInput required name="title" placeholder="Task" [(ngModel)]="title"
       (keyup.enter)="addTask()">
-    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="inputValue" (click)="inputValue=''">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="title" (click)="title=''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
