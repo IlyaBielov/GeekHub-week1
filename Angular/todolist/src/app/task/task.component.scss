@@ -1,105 +1,21 @@
-.list__item {
+.form {
+    position: relative;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    padding: 0.4rem 0 0 0; 
-    border-bottom: 0.07rem solid #ccc;
-    transition: all 250ms ease;
+    align-items: center;
+    width: 30rem;
 
-    &:hover {
-        border-bottom: 0.07rem solid #45a3f5;
-
-        &:active {
-            border-bottom: 0.07rem solid #45f580;
-        }
-    }
-
-    &.selected {
-        border-bottom: 0.07rem solid #45f580;
-
-        &:hover {
-            border-bottom: 0.07rem solid #45a3f5;
-
-            &:active {
-                border-bottom: 0.07rem solid #45f580;
-            }
-        }
-    }
-
-    .list__txt {
-        overflow: hidden;
-    }
-
-    .list__buttons {
-        
-        .delete__button {
-            appearance: none;
-            border: none;
-            padding-right: 0.5rem;
-            margin: 0;
-            background-color: transparent;
-            outline: none;
-        
-            &:hover {
-                cursor: pointer;
-            }
-        
-            .delete {
-                color: #ccc;
-                transition: all 250ms ease;
-                font-size: 1.3rem;
-        
-                &:hover {
-                    color: #f5455d;
-                }
-            }
-        }
-    
-        .edit__button {
-            appearance: none;
-            border: none;
-            padding-right: 0.5rem;
-            margin: 0;
-            background-color: transparent;
-            outline: none;
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            .edit {
-                color: #ccc;
-                transition: all 250ms ease;
-                font-size: 1.3rem;
-        
-                &:hover {
-                    color: #45a3f5;
-                }
-            }
-
-            .save {
-                color: #ccc;
-                transition: all 250ms ease;
-                font-size: 1.3rem;
-        
-                &:hover {
-                    color: #f5d545;
-                }
-            }
-        }
-    }
-
-    .list__txt-edit {
-        position: relative;
-        top: -1px;
+    .form-input {
         appearance: none;
         border: none;
-        padding: 0;
-        margin: 0;
-        min-width: 90%;
+        outline: transparent;
+        color: #000;
+        background-color: transparent;
+        font-size: 1.0rem;
+        width: 68%;
     }
 }
 
-.date {
-    font-size: 0.8rem;
-    color: rgb(155, 155, 155);
+.button {
+    margin-right: 0.5rem;
 }

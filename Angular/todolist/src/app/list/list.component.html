@@ -1,5 +1,10 @@
-<ul class="list">
-  <li *ngFor="let task of tasks">
-    <app-task [task]="task"></app-task>
-  </li>
-</ul>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let task of tasks">
+    <mat-expansion-panel-header class="header">
+        <app-task [task]="task"></app-task>
+    </mat-expansion-panel-header>
+    <ng-template matExpansionPanelContent class="date">
+      {{this.task.responsible}} : {{this.task.dueDate | date:'dd.MM.yyyy'}}
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>

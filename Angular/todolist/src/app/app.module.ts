@@ -17,6 +17,7 @@ import { ListComponent } from './list/list.component';
 import { DataComponent } from './data/data.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSnackBarModule } from '@angular/material';
+import { MatCardModule, MatExpansionModule } from '@angular/material';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
@@ -51,7 +52,9 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]

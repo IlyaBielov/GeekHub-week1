@@ -1,24 +1,10 @@
-<div (click)="resloveTask()" class="list__item" [ngClass]="{'selected': task.status === 'done'}">
-
-  <label class="list__txt" *ngIf="!editTaskVar;">{{task.title}}</label>
-  <input #focusInput type="text" class="list__txt-edit" *ngIf="editTaskVar;" [(ngModel)]="task.title">
-  
-  <div class="list__buttons">
-    <button *ngIf="!editTaskVar; else buttonSave" class="edit__button" (click)="editTask()">
-      <i class="material-icons edit">edit</i>
-    </button>
-    <button class="delete__button" (click)="deleteTask()">
-      <i class="material-icons delete">delete</i>
-    </button>
-  </div>
+<div class="form">
+  <input #focusInput required name="inputValue" class="form-input" [disabled]="!editTaskVar" [(ngModel)]="task.title"
+    (keyup.enter)="addTask()">
+  <button mat-raised-button color="primary" *ngIf="!editTaskVar; else buttonSave" (click)="editTask()"
+    class="button">Edit</button>
+  <button mat-raised-button color="warn" (click)="deleteTask()" class="button">Delete</button>
 </div>
-
-<div class="date">
-  {{this.task.responsible}} : {{this.task.dueDate | date:'dd.MM.yyyy'}}
-</div>
-
 <ng-template #buttonSave>
-  <button class="edit__button" (click)="saveTask()">
-    <i class="material-icons save">save</i>
-  </button>
+  <button mat-raised-button color="accent" (click)="saveTask()" class="button">Save</button>
 </ng-template>

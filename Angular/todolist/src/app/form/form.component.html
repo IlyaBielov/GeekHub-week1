@@ -1,28 +1,20 @@
 <form class="form">
   <mat-form-field class="form-item form-item-full">
-    <input matInput #focusInput #message required name="inputValue"
-      placeholder="Task" [(ngModel)]="inputValue" (keyup.enter)="addTask()"
-    >
-    <button mat-button matSuffix mat-icon-button aria-label="Clear"
-      *ngIf="inputValue" (click)="inputValue=''"
-    ><mat-icon>close</mat-icon>
+    <input matInput #focusInput required name="inputValue" placeholder="Task" [(ngModel)]="inputValue"
+      (keyup.enter)="addTask()">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="inputValue" (click)="inputValue=''">
+      <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
   <div class="from-wrap">
     <mat-form-field class="form-item margin">
-      <input matInput #action required name="authorName"
-        placeholder="Name" [(ngModel)]="authorName"
-      >
-      <button mat-button matSuffix mat-icon-button aria-label="Clear"
-        *ngIf="authorName" (click)="authorName=''"
-      >
+      <input matInput #action required name="authorName" placeholder="Name" [(ngModel)]="authorName">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="authorName" (click)="authorName=''">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
     <mat-form-field class="form-item margin">
-      <input matInput required [matDatepicker]="picker" name="date"
-        placeholder="Choose a date" [(ngModel)]="date"
-      >
+      <input matInput required [matDatepicker]="picker" name="date" placeholder="Choose a date" [(ngModel)]="date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
