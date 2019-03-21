@@ -1,16 +1,31 @@
-<div class="form">
-  <input type="text" class="form__input" placeholder="Enter your task" [(ngModel)]="inputValue"
-    (keyup.enter)="addTask()">
-  <button type="button" class="form__button" (click)="addTask()">+</button>
-</div>
-
-<mat-form-field>
-  <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="date">
-  <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-  <mat-datepicker #myDatepicker disabled="false"></mat-datepicker>
-</mat-form-field>
-
-<div class="author">
-  <label for="authorName">Your name</label>
-  <input id="authorName" type="text" [(ngModel)]="authorName">
-</div>
+<form class="form">
+  <mat-form-field class="form-item">
+    <input matInput  #message required name="inputValue"
+      placeholder="Task" [(ngModel)]="inputValue" (keyup.enter)="addTask()"
+    >
+    <button mat-button matSuffix mat-icon-button aria-label="Clear"
+      *ngIf="inputValue" (click)="inputValue=''"
+    ><mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <div class="from-wrap">
+    <mat-form-field class="form-item margin">
+      <input matInput #action required name="authorName"
+        placeholder="Name" [(ngModel)]="authorName"
+      >
+      <button mat-button matSuffix mat-icon-button aria-label="Clear"
+        *ngIf="authorName" (click)="authorName=''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="form-item margin">
+      <input matInput required [matDatepicker]="picker" name="date"
+        placeholder="Choose a date" [(ngModel)]="date"
+      >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button class="button" color="primary" (click)="addTask()">Save</button>
+  </div>
+</form>
