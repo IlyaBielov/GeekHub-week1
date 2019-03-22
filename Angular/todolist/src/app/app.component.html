@@ -1,9 +1,11 @@
-<div class="bg">
-<header>
+<div class="wrap">
+<header class="header">
   <app-nav></app-nav>
 </header>
-<main class="wrap">
-  <mat-card>
+<main class="main">
+  <mat-card class="mat-card">
+    <h2 *ngIf="router.url === '/'" class="heading">List of tasks</h2>
+    <h2 *ngIf="router.url === '/add'" class="heading">Create task</h2>
     <router-outlet></router-outlet>
   </mat-card>
 </main>
