@@ -1,6 +1,5 @@
 <div class="form">
-  <input #focusInput required name="inputValue" class="form-input" [disabled]="!editTaskVar" [(ngModel)]="task.title"
-    (keyup.enter)="addTask()">
+  <input #focusInput required name="title" class="form-input" [disabled]="!editTaskVar" [(ngModel)]="task.title">
   <button mat-raised-button color="primary" *ngIf="!editTaskVar; else buttonSave" (click)="editTask()"
     class="button">Edit</button>
   <button mat-raised-button color="warn" (click)="deleteTask()" class="button">Delete</button>
