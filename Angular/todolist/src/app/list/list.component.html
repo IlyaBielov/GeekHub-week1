@@ -1,0 +1,5 @@
+<ul class="list">
+  <li *ngFor="let task of tasks; let idx = index;">
+    <app-task *ngIf="!task.isDeleted" [task]="task"></app-task>
+  </li>
+</ul>
