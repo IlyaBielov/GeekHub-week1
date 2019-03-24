@@ -1,5 +1,5 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
-import { Task } from 'src/app/task';
+import { Component, Input } from '@angular/core';
+import { Task, Status } from 'src/app/task';
 import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
@@ -9,38 +9,30 @@ import { TodoListService } from 'src/app/todo-list.service';
 })
 export class TaskComponent {
   @Input() task: Task;
+  toggleEditTask: boolean;
 
-  @ViewChild('focusInput') focusInput: ElementRef;
-
-  editTaskVar = false;
-
-  constructor(private todoListService: TodoListService) { }
-
-  resloveTask(): void {
-    this.task.isChecked = !this.task.isChecked;
-
-    this.todoListService.putTodoList();
+  constructor(private todoListService: TodoListService) {
+    this.toggleEditTask = false;
   }
 
-  deleteTask() {
-    this.task.isDeleted = true;
+  doneTask(): void {
+    if (this.task.status === Status.new) {
+      this.task.status = Status.done;
+    } else {
+      this.task.status = Status.new;
+    }
 
-    this.todoListService.putTodoList();
+    this.todoListService.update(this.task);
   }
 
   editTask() {
-    this.editTaskVar = true;
-
-    setTimeout(() => {
-      this.focusInput.nativeElement.focus();
-    }, 0);
-
-    this.todoListService.putTodoList();
+    if (this.toggleEditTask) {
+      this.todoListService.update(this.task);
+    }
+    this.toggleEditTask = !this.toggleEditTask;
   }
 
-  saveTask() {
-    this.editTaskVar = false;
-
-    this.todoListService.putTodoList();
+  deleteTask() {
+    this.todoListService.delete(this.task);
   }
 }

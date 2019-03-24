@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoListService } from 'src/app/todo-list.service';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-data',
@@ -10,15 +11,13 @@ export class DataComponent {
 
   constructor(private todoListService: TodoListService) { }
 
-  get checkedItems(): number {
-    let res = this.todoListService.todoList.filter(item => item.isChecked);
-    res = res.filter(item => !item.isDeleted);
+  get newTasks(): number {
+    const res = this.todoListService.toDoList.filter((item: Task) => item.status === 'new');
     return res.length;
   }
 
-  get inProgressItems(): number {
-    let res = this.todoListService.todoList.filter(item => !item.isChecked);
-    res = res.filter(item => !item.isDeleted);
+  get doneTasks(): number {
+    const res = this.todoListService.toDoList.filter((item: Task) => item.status === 'done');
     return res.length;
   }
 }

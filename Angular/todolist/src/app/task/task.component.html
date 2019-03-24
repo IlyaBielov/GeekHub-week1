@@ -1,20 +1,9 @@
-<div (click)="resloveTask()" class="list__item" [ngClass]="{'selected': task.isChecked}">
-
-  <label class="list__txt" *ngIf="!editTaskVar;">{{task.text}}</label>
-  <input #focusInput type="text" class="list__txt-edit" *ngIf="editTaskVar;" [(ngModel)]="task.text">
-  
-  <div class="list__buttons">
-    <button *ngIf="!editTaskVar; else buttonSave" class="edit__button" (click)="editTask()">
-      <i class="material-icons edit">edit</i>
-    </button>
-    <button class="delete__button" (click)="deleteTask()">
-      <i class="material-icons delete">delete</i>
-    </button>
-  </div>
-</div>
-
-<ng-template #buttonSave>
-  <button class="edit__button" (click)="saveTask()">
-    <i class="material-icons save">save</i>
-  </button>
-</ng-template>
+<input type="checkbox" name="doneTask" (change)="doneTask()">
+<input type="text" class="input" [(ngModel)]="task.title" [disabled]="!toggleEditTask">
+<button class="button edit" (click)="editTask()">
+  <span *ngIf="!toggleEditTask" class="edit">edit</span>
+  <span *ngIf="toggleEditTask" class="save">save</span>
+</button>
+<button class="button delete" (click)="deleteTask()">
+  <span class="delete">delete</span>
+</button>

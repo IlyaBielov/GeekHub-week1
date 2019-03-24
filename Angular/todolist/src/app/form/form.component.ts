@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoListService } from 'src/app/todo-list.service';
-import { IdService } from 'src/app/id.service';
+import { Status } from '../task';
 
 @Component({
   selector: 'app-form',
@@ -8,23 +8,24 @@ import { IdService } from 'src/app/id.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  inputValue: string;
+  title: string;
+  date: Date;
+  authorName: string;
 
-  constructor(private todoListService: TodoListService, private idService: IdService) {
+  constructor(private todoListService: TodoListService) {
+    this.date = new Date();
   }
 
   addTask(): void {
-    if (!this.inputValue) { return; }
+    if (!this.title) { return; }
 
-    this.todoListService.todoList.push({
-      id: this.idService.id,
-      text: this.inputValue,
-      isChecked: false,
-      isDeleted: false
+    this.todoListService.save({
+      title: this.title,
+      responsible: this.authorName,
+      dueDate: this.date,
+      status: Status.new
     });
 
-    this.todoListService.putTodoList();
-
-    this.inputValue = null;
+    this.title = null;
   }
 }
