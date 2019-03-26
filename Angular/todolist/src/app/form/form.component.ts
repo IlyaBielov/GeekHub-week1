@@ -22,10 +22,9 @@ export class FormComponent {
     this.todoListService.save({
       title: this.title,
       responsible: this.authorName,
-      dueDate: this.date,
+      dueDate: this.date.toISOString(),
       status: Status.new
     });
-
     this.authorName = null;
     this.title = null;
   }
