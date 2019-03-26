@@ -15,7 +15,7 @@ import { DataComponent } from './data/data.component';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
-  { path: 'add', component: FormComponent },
+  { path: 'new', component: FormComponent },
   // { path: '**', component: PageNotFoundComponent }
 ];
 

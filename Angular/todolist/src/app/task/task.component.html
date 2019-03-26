@@ -1,4 +1,4 @@
-<input type="checkbox" name="doneTask" (change)="doneTask()">
+<input type="checkbox" name="doneTask" (change)="doneTask()" [checked]="task.status === 'done'">
 <input type="text" class="input" [(ngModel)]="task.title" [disabled]="!toggleEditTask">
 <button class="button edit" (click)="editTask()">
   <span *ngIf="!toggleEditTask" class="edit">edit</span>

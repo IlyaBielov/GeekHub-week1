@@ -19,8 +19,6 @@ export class TodoListService {
   };
 
   constructor(private httpClient: HttpClient) {
-    this.toDoList = [];
-
     this.httpClient.get<HttpResponse<Task[]>>(this.baseUrl, this.httpOptions).subscribe((res) => {
       this.toDoList = res.body;
     });
@@ -31,8 +29,10 @@ export class TodoListService {
   }
 
   save(task: Task) {
-    this.toDoList.push(task);
-    this.httpClient.post<Task>(this.baseUrl, task, this.httpOptions).subscribe();
+    this.httpClient.post(this.baseUrl, task, this.httpOptions).subscribe((res: HttpResponse<{ id: string }>) => {
+      task.id = res.body.id;
+      this.toDoList.push(task);
+    });
   }
 
   update(task: Task) {
@@ -41,11 +41,7 @@ export class TodoListService {
 
   delete(task: Task) {
     const idx: number = this.toDoList.findIndex(item => item.id === task.id);
-
     this.toDoList.splice(idx, 1);
-
-    this.httpClient.delete<Task>(this.baseUrl + task.id, this.httpOptions).subscribe(res => {
-      this.toDoList.splice(idx, 1);
-    });
+    this.httpClient.delete<Task>(this.baseUrl + task.id, this.httpOptions).subscribe();
   }
 }

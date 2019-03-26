@@ -12,12 +12,16 @@ export class DataComponent {
   constructor(private todoListService: TodoListService) { }
 
   get newTasks(): number {
-    const res = this.todoListService.toDoList.filter((item: Task) => item.status === 'new');
-    return res.length;
+    if (this.todoListService.toDoList) {
+      const res = this.todoListService.toDoList.filter((item: Task) => item.status === 'new');
+      return res.length;
+    }
   }
 
   get doneTasks(): number {
-    const res = this.todoListService.toDoList.filter((item: Task) => item.status === 'done');
-    return res.length;
+    if (this.todoListService.toDoList) {
+      const res = this.todoListService.toDoList.filter((item: Task) => item.status === 'done');
+      return res.length;
+    }
   }
 }

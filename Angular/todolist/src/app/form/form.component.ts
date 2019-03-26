@@ -17,7 +17,7 @@ export class FormComponent {
   }
 
   addTask(): void {
-    if (!this.title) { return; }
+    if (!this.title || !this.authorName) { return; }
 
     this.todoListService.save({
       title: this.title,
@@ -26,6 +26,7 @@ export class FormComponent {
       status: Status.new
     });
 
+    this.authorName = null;
     this.title = null;
   }
 }
