@@ -12,6 +12,7 @@ import { FormComponent } from './form/form.component';
 import { MainComponent } from './_main/main.component';
 import { ListComponent } from './list/list.component';
 import { DataComponent } from './data/data.component';
+import { InputFocusDirective } from './directives/input-focus.directive';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     FormComponent,
     MainComponent,
     ListComponent,
-    DataComponent
+    DataComponent,
+    InputFocusDirective
   ],
   imports: [
     BrowserModule,
