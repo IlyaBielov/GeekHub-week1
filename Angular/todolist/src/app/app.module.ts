@@ -13,6 +13,7 @@ import { MainComponent } from './_main/main.component';
 import { ListComponent } from './list/list.component';
 import { DataComponent } from './data/data.component';
 import { InputFocusDirective } from './directives/input-focus.directive';
+import { DateFilterPipe } from './pipes/date-filter.pipe';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     MainComponent,
     ListComponent,
     DataComponent,
-    InputFocusDirective
+    InputFocusDirective,
+    DateFilterPipe
   ],
   imports: [
     BrowserModule,
