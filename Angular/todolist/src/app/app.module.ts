@@ -6,14 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { Angular2AirDatepickerModule } from 'angular2-air-datepicker';
 
 import { AppComponent } from './app.component';
-import { TaskComponent } from './task/task.component';
-import { HeaderComponent } from './_header/header.component';
-import { FormComponent } from './form/form.component';
-import { MainComponent } from './_main/main.component';
-import { ListComponent } from './list/list.component';
-import { DataComponent } from './data/data.component';
-import { InputFocusDirective } from './directives/input-focus.directive';
-import { DateFilterPipe } from './pipes/date-filter.pipe';
+import { HeaderComponent } from './core/header/header.component';
+import { MainComponent } from './core/main/main.component';
+import { TaskComponent } from './shared/components/task/task.component';
+import { FormComponent } from './shared/components/form/form.component';
+import { ListComponent } from './shared/components/list/list.component';
+import { DataComponent } from './shared/components/data/data.component';
+
+import { InputFocusDirective } from './shared/directives/input-focus.directive';
+import { DateFilterPipe } from './shared/pipes/date-filter.pipe';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListComponent },

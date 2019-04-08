@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TodoListService } from 'src/app/todo-list.service';
-import { Status } from '../task';
+import { TodoListService } from 'src/app/core/services/todo-list.service';
+import { Status } from '../../../shared/models/task';
 
 @Component({
   selector: 'app-form',

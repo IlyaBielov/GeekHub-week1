@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TodoListService } from 'src/app/todo-list.service';
-import { Task } from '../task';
+import { TodoListService } from 'src/app/core/services/todo-list.service';
+import { Task } from '../../../shared/models/task';
 
 @Component({
   selector: 'app-data',
