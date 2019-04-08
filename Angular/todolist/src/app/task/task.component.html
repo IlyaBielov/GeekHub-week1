@@ -1,9 +1,21 @@
-<input type="checkbox" name="doneTask" (change)="doneTask()" [checked]="task.status === 'done'">
-<input type="text" class="input" [appInputFocus]="toggleEditTask" [(ngModel)]="task.title" [disabled]="!toggleEditTask">
-<button class="button edit" (click)="editTask()">
-  <span *ngIf="!toggleEditTask" class="edit">edit</span>
-  <span *ngIf="toggleEditTask" class="save">save</span>
-</button>
-<button class="button delete" (click)="deleteTask()">
-  <span class="delete">delete</span>
-</button>
+<div class="task">
+  <div class="main-info">
+    <button class="button more" (click)="moreInfo()">
+      <span class="delete">more</span>
+    </button>
+    <input type="checkbox" name="doneTask" (change)="doneTask()" [checked]="task.status === 'done'">
+    <input type="text" class="input" [appInputFocus]="toggleEditTask" [(ngModel)]="task.title"
+      [disabled]="!toggleEditTask">
+    <button class="button edit" (click)="editTask()">
+      <span *ngIf="!toggleEditTask" class="edit">edit</span>
+      <span *ngIf="toggleEditTask" class="save">save</span>
+    </button>
+    <button class="button delete" (click)="deleteTask()">
+      <span class="delete">delete</span>
+    </button>
+  </div>
+  <div class="more-info" *ngIf="show">
+    <p class="author-name">{{task.responsible}}</p>
+    <p class="date">{{task.dueDate | date:'fullDate'}}</p>
+  </div>
+</div>

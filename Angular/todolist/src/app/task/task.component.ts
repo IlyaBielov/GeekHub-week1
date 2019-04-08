@@ -10,6 +10,7 @@ import { TodoListService } from 'src/app/todo-list.service';
 export class TaskComponent {
   @Input() task: Task;
   toggleEditTask: boolean;
+  show: boolean;
 
   constructor(private todoListService: TodoListService) {
     this.toggleEditTask = false;
@@ -34,5 +35,9 @@ export class TaskComponent {
 
   deleteTask() {
     this.todoListService.delete(this.task);
+  }
+
+  moreInfo() {
+    this.show = !this.show;
   }
 }
