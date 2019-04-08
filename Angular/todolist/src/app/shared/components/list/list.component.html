@@ -1,0 +1,5 @@
+<ul class="list">
+  <li *ngFor="let task of todoListService.toDoList | dateFilter" >
+    <app-task [task]="task"></app-task>
+  </li>
+</ul>
